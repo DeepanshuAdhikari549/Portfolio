@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepanshu Adhikari | Fullstack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Theme Gradients -->
+    <div class="theme-gradient gradient-1"></div>
+    <div class="theme-gradient gradient-2"></div>
+    <div class="theme-gradient gradient-3"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <i class="fas fa-code logo-icon"></i>
+                    <span>Deepanshu</span>Adhikari
+                </a>
+                <div class="nav-links" id="navLinks">
+                    <a href="#hero">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#education">Education</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#resume">Resume</a>
+                    <a href="#contact">Contact</a>
+                    <div class="theme-controls">
+                        <button class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <div class="theme-colors">
+                            <button class="theme-color-btn blue" data-theme="default"></button>
+                            <button class="theme-color-btn dark" data-theme="dark"></button>
+                            <button class="theme-color-btn light-blue" data-theme="light-blue"></button>
+                            <button class="theme-color-btn purple" data-theme="purple"></button>
+                            <button class="theme-color-btn green" data-theme="green"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-right">
+                    <h1 class="animate-fadeUp">Hi, I'm <span id="typing-name"></span></h1>
+                    <p class="animate-fadeUp delay-1">Fullstack Developer with expertise in building modern web applications from front to back.</p>
+                    <div class="hero-btns animate-fadeUp delay-2">
+                        <a href="#contact" class="btn">
+                            <i class="fas fa-paper-plane"></i> Get In Touch
+                        </a>
+                        <a href="#projects" class="btn btn-outline">
+                            <i class="fas fa-laptop-code"></i> View Projects
+                        </a>
+                    </div>
+                    <div class="social-links animate-fadeUp delay-3">
+                        <a href="https://www.linkedin.com/in/deepanshu-adhikari-1b768028b" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/DeepanshuAdhikari549" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/deepanshu_549" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=deepanshuadhikari549@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image" data-aos="fade-left">
+                    <img src="assets/img.jpg" alt="Deepanshu Adhikari" class="floating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>About Me</h2>
+                <p class="subtitle">Who I am and what I do</p>
+            </div>
+            <div class="about-content" data-aos="fade-up">
+                <div class="about-text">
+                    <h3 class="section-heading">Fullstack Developer</h3>
+                    <p>I'm Deepanshu Adhikari, a passionate developer currently pursuing my Master's in Computer Applications. My journey in programming started during my bachelor's degree, and since then I've been fascinated by how technology can solve real-world problems.</p>
+                    
+                    <p>I specialize in the MERN stack (MongoDB, Express.js, React.js, and Node.js), but I'm also comfortable working with Java and C. What excites me most about development is the ability to create complete solutions - from designing user interfaces to implementing complex backend logic.</p>
+                    
+                    <p>When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or solving problems on coding platforms. I believe in continuous learning and pushing my boundaries to become a better developer every day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>My Skills</h2>
+                <p class="subtitle">Technologies I work with</p>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Frontend</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            HTML5
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            CSS3
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js"></i>
+                            JavaScript
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            React
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Backend</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            Node.js
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            MongoDB
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-server"></i>
+                            Express
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Languages</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            C
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-java"></i>
+                            Java
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Core Concepts</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fas fa-project-diagram"></i>
+                            Data Structures
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-calculator"></i>
+                            Algorithms
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>My Education</h2>
+                <p class="subtitle">Academic journey</p>
+            </div>
+            <div class="journey-container">
+                <div class="journey-path" data-aos="fade-up">
+                    <div class="path-item">
+                        <div class="path-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="path-content">
+                            <h4>Master's in Computer Applications</h4>
+                            <span class="path-date">2024 - Present</span>
+                            <p class="institution">Graphic Era Hill University, Dehradun</p>
+                            <p>Currently expanding my knowledge in advanced computing concepts, cloud architecture, and fullstack development methodologies.</p>
+                            <div class="path-meta">
+                                <span class="grade-badge">Current SGPA: 7.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="path-item">
+                        <div class="path-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="path-content">
+                            <h4>Bachelor of Science (Computer Science)</h4>
+                            <span class="path-date">2020 - 2023</span>
+                            <p class="institution">Soban Singh Jeena Campus, Almora</p>
+                            <p>Built strong foundations in programming, algorithms, and software engineering principles.</p>
+                            <div class="path-meta">
+                                <span class="grade-badge">Score: 60.9%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="path-item">
+                        <div class="path-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div class="path-content">
+                            <h4>Higher Secondary (12th)</h4>
+                            <span class="path-date">2019 - 2020</span>
+                            <p class="institution">Vivekanand Inter College, Almora</p>
+                            <p>Completed with PCM stream, laying the foundation for my technical education.</p>
+                            <div class="path-meta">
+                                <span class="grade-badge">Score: 66%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-gained" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Key Learnings</h3>
+                    <div class="skills-grid">
+                        <div class="skill-badge">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Fullstack Development</span>
+                        </div>
+                        <div class="skill-badge">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>System Design</span>
+                        </div>
+                        <div class="skill-badge">
+                            <i class="fas fa-users"></i>
+                            <span>Team Collaboration</span>
+                        </div>
+                        <div class="skill-badge">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Problem Solving</span>
+                        </div>
+                        <div class="skill-badge">
+                            <i class="fas fa-code"></i>
+                            <span>Algorithm Design</span>
+                        </div>
+                        <div class="skill-badge">
+                            <i class="fas fa-database"></i>
+                            <span>Database Management</span>
+                        </div>
+                    </div>
+                    
+                    <div class="education-cta">
+                        <p>Education is just the beginning. The real learning happens through building, breaking, and rebuilding.</p>
+                        <a href="#projects" class="btn btn-outline">
+                            <i class="fas fa-arrow-right"></i> See My Projects
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>My Projects</h2>
+                <p class="subtitle">Practical implementations of my skills</p>
+            </div>
+            <div class="projects-container">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-img">
+                        <img src="assets/Fitbae.png" alt="E-Commerce Project">
+                        <div class="project-tags">
+                            <span class="project-tag">MERN Stack</span>
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">Stripe</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h4>FitBae: E-Commerce Platform</h4>
+                        <p>A comprehensive MERN stack e-commerce platform featuring secure user authentication, product browsing, dynamic cart management, and Stripe payment integration.</p>
+                        <ul class="project-features">
+                            <li>Built responsive React.js frontend with clean CSS styling</li>
+                            <li>Developed RESTful API backend using Node.js/Express.js</li>
+                            <li>Implemented MongoDB for data persistence</li>
+                            <li>Created admin dashboard for product and order management</li>
+                            <li>Designed rule-based product recommendation system</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/DeepanshuAdhikari549" target="_blank" class="btn btn-small">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-img">
+                        <img src="assets/Bank Management.png" alt="Banking System">
+                        <div class="project-tags">
+                            <span class="project-tag">C Programming</span>
+                            <span class="project-tag">Data Structures</span>
+                            <span class="project-tag">Algorithms</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h4>SwiftBank: Banking System</h4>
+                        <p>A lightweight yet robust banking system simulation in C, leveraging fundamental data structures to efficiently manage banking operations.</p>
+                        <ul class="project-features">
+                            <li>Implemented linked lists for customer account management</li>
+                            <li>Developed stacks for transaction history with undo functionality</li>
+                            <li>Created queues for FIFO service request processing</li>
+                            <li>Utilized Dijkstra's algorithm for branch locator feature</li>
+                            <li>Implemented file handling for secure data persistence</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/DeepanshuAdhikari549" target="_blank" class="btn btn-small">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-img">
+                        <div class="placeholder-text">Coming Soon</div>
+                    </div>
+                    <div class="project-info">
+                        <h4>New Project in Progress</h4>
+                        <p>Working on an exciting new fullstack application using cutting-edge technologies.</p>
+                        <div class="project-links">
+                            <button class="btn btn-small btn-disabled" disabled>
+                                <i class="fas fa-hourglass-half"></i> In Development
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>My Resume</h2>
+                <p class="subtitle">Professional overview</p>
+            </div>
+            <div class="resume-container" data-aos="fade-up">
+                <p>You can view or download my resume to learn more about my professional experience and qualifications.</p>
+                <div class="resume-download">
+                    <a href="assets/MyresumeUpdated.pdf" class="btn" download>
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                    <a href="assets/MyresumeUpdated.pdf" class="btn btn-outline" target="_blank">
+                        <i class="fas fa-eye"></i> View Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Get In Touch</h2>
+                <p class="subtitle">Let's collaborate on something great</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=deepanshuadhikari549@gmail.com" target="_blank">deepanshuadhikari549@gmail.com</a>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h4>Phone</h4>
+                        <a href="tel:+917668070347">+91 7668070347</a>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Location</h4>
+                        <p>Almora, Uttarakhand, India</p>
+                    </div>
+                </div>
+                <form id="contactForm" class="contact-form" data-aos="fade-left" data-aos-delay="200">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Enter subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Deepanshu Adhikari</h3>
+                    <p>Fullstack Developer passionate about creating exceptional digital experiences through clean code and innovative solutions.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> deepanshuadhikari549@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 7668070347</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Deepanshu Adhikari. All rights reserved.</p>
+                <p>Made by Deepanshu</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#hero" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
