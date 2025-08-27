@@ -1,515 +1,780 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Deepanshu Adhikari — Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deepanshu Adhikari — Portfolio</title>
 
-  <!-- Icons & Animations -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+    <!-- Icons & Animations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Poppins:wght@400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css"/>
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
 
-  <!-- Meta -->
-  <meta name="theme-color" content="#007bff">
-  <meta name="description" content="Frontend developer focused on fast, accessible and delightful web experiences.">
-</head>
-<body>
+    <!-- Meta -->
+    <meta name="theme-color" content="#007bff" />
+    <meta
+      name="description"
+      content="Frontend developer focused on fast, accessible and delightful web experiences."
+    />
+  </head>
+  <body>
+    <!-- Background layers -->
+    <canvas id="bgCanvas" aria-hidden="true"></canvas>
+    <div class="orbs" aria-hidden="true">
+      <span class="orb o1"></span>
+      <span class="orb o2"></span>
+      <span class="orb o3"></span>
+      <span class="orb o4"></span>
+    </div>
 
-  <!-- Background layers -->
-  <canvas id="bgCanvas" aria-hidden="true"></canvas>
-  <div class="orbs" aria-hidden="true">
-    <span class="orb o1"></span>
-    <span class="orb o2"></span>
-    <span class="orb o3"></span>
-    <span class="orb o4"></span>
-  </div>
+    <!-- Scroll progress -->
+    <div id="scrollbar" aria-hidden="true"></div>
 
-  <!-- Scroll progress -->
-  <div id="scrollbar" aria-hidden="true"></div>
-
-  <!-- Header -->
-  <header id="header">
-    <nav class="container nav" aria-label="Primary">
-      <!-- Upgraded LOGO (SVG + name, still opens Gmail compose) -->
-      <a
-        href="https://mail.google.com/mail/?view=cm&fs=1&to=deepanshuadhikari549@gmail.com"
-        target="_blank" rel="noopener noreferrer"
-        class="logo"
-        aria-label="Email Deepanshu"
-      >
-        <span class="logo-mark" aria-hidden="true">
-          <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
-            <defs>
-              <linearGradient id="g1" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#007bff"/>
-                <stop offset="1" stop-color="#00c6ff"/>
-              </linearGradient>
-            </defs>
-            <rect x="2.5" y="2.5" width="43" height="43" rx="10" stroke="url(#g1)" stroke-width="2.5"/>
-            <path d="M14 32L24 12L34 32M19 26H29" stroke="url(#g1)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        <span class="logo-text"><b>Deepanshu</b> Adhikari</span>
-      </a>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#hero" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact" class="pill">Hire Me</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <i class="fas fa-bars"></i>
-      </button>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <section id="hero" class="container hero">
-    <div class="hero-left" data-aos="fade-right">
-      <span class="badge">AVAILABLE FOR INTERNSHIPS & FREELANCE</span>
-      <h1>Hi, I’m <span class="highlight">Deepanshu</span></h1>
-      <h2 class="role gradient-text">FullStack Developer</h2>
-      <p class="lede">
-        I design & build clean, fast and responsive UIs with modern JavaScript. 
-        Focused on performance, accessibility and delightful micro-interactions.
-      </p>
-
-      <div class="hero-cta">
-        <a href="#projects" class="btn btn-grad"><i class="fa-solid fa-eye"></i> View Work</a>
-        <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=deepanshuadhikari549@gmail.com&su=Project%20Inquiry&body=Hi%20Deepanshu%2C%0A"
-          target="_blank" rel="noopener noreferrer"
-          class="btn btn-ghost"
-        ><i class="fa-solid fa-handshake"></i> Hire Me</a>
-        <a href="assets/MyresumeUpdated.pdf" target="_blank" class="btn btn-ghost"><i class="fa-solid fa-download"></i> Resume</a>
-      </div>
-
-      <div class="socials">
-        <a href="https://github.com/DeepanshuAdhikari549" target="_blank" aria-label="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/deepanshu-adhikari-1b768028b" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/deepanshu_549" target="_blank" aria-label="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+    <!-- Header -->
+    <header id="header">
+      <nav class="container nav" aria-label="Primary">
+        <!-- Upgraded LOGO (SVG + name, still opens Gmail compose) -->
         <a
           href="https://mail.google.com/mail/?view=cm&fs=1&to=deepanshuadhikari549@gmail.com"
-          target="_blank" rel="noopener noreferrer"
-          aria-label="Mail"
-        ><i class="fa-solid fa-envelope"></i></a>
-      </div>
-    </div>
+          target="_blank"
+          rel="noopener noreferrer"
+          class="logo"
+          aria-label="Email Deepanshu"
+        >
+          <span class="logo-mark" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
+              <defs>
+                <linearGradient
+                  id="g1"
+                  x1="0"
+                  y1="0"
+                  x2="48"
+                  y2="48"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#007bff" />
+                  <stop offset="1" stop-color="#00c6ff" />
+                </linearGradient>
+              </defs>
+              <rect
+                x="2.5"
+                y="2.5"
+                width="43"
+                height="43"
+                rx="10"
+                stroke="url(#g1)"
+                stroke-width="2.5"
+              />
+              <path
+                d="M14 32L24 12L34 32M19 26H29"
+                stroke="url(#g1)"
+                stroke-width="3.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          <span class="logo-text"><b>Deepanshu</b> Adhikari</span>
+        </a>
 
-    <div class="hero-right" data-aos="fade-left">
-      <div class="pfp-wrap tilt">
-        <img src="assets/img.jpg" alt="Deepanshu Adhikari" loading="eager"/>
-        <span class="ring r1"></span>
-        <span class="ring r2"></span>
-      </div>
-    </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact" class="pill">Hire Me</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </header>
 
-    <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0,64L48,58.7C96,53,192,43,288,42.7C384,43,480,53,576,74.7C672,96,768,128,864,133.3C960,139,1056,117,1152,96C1248,75,1344,53,1392,42.7L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
-    </svg>
-  </section>
+    <!-- Hero -->
+    <section id="hero" class="container hero">
+      <div class="hero-left" data-aos="fade-right">
+        <span class="badge">AVAILABLE FOR INTERNSHIPS & FREELANCE</span>
+        <h1>Hi, I’m <span class="highlight">Deepanshu</span></h1>
+        <h2 class="role gradient-text">FullStack Developer</h2>
+        <p class="lede">
+          I design & build clean, fast and responsive UIs with modern
+          JavaScript. Focused on performance, accessibility and delightful
+          micro-interactions.
+        </p>
 
-  <!-- About -->
-  <section id="about">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2>About Me</h2>
-        <p class="subtitle">Who I am & What I Focus On</p>
-      </div>
-
-      <div class="about-grid" data-aos="fade-up">
-        <div class="about-card">
-          <h3>🚀 Passion</h3>
-          <p>I love building web applications that are fast, accessible, and user-friendly. My focus is on writing clean code and designing intuitive UIs.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-grad"
+            ><i class="fa-solid fa-eye"></i> View Work</a
+          >
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=deepanshuadhikari549@gmail.com&su=Project%20Inquiry&body=Hi%20Deepanshu%2C%0A"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-ghost"
+            ><i class="fa-solid fa-handshake"></i> Hire Me</a
+          >
+          <a
+            href="assets/MyresumeUpdated.pdf"
+            target="_blank"
+            class="btn btn-ghost"
+            ><i class="fa-solid fa-download"></i> Resume</a
+          >
         </div>
-        <div class="about-card">
-          <h3>💡 Current Focus</h3>
-          <p>Exploring <b>fullstack development</b> with MERN, enhancing performance, and contributing to open-source projects.</p>
-        </div>
-        <div class="about-card">
-          <h3>🎯 Goal</h3>
-          <p>To become a <b>proficient software engineer</b> who solves real problems and creates impactful products.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Skills (rebuilt) -->
-  <section id="skills" class="section section-alt">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p class="subtitle">A modern stack for building fast, accessible, delightful apps</p>
-      </div>
-
-      <!-- Categories -->
-      <div class="skills-cats">
-        <button class="chip active" data-scope="all">All</button>
-        <button class="chip" data-scope="frontend">Frontend</button>
-        <button class="chip" data-scope="backend">Backend</button>
-        <button class="chip" data-scope="database">Database</button>
-        <button class="chip" data-scope="tools">Tools</button>
-        <button class="chip" data-scope="language">Languages</button>
-      </div>
-
-      <!-- Skill cards grid -->
-      <div class="skills-grid">
-        <!-- Frontend -->
-        <article class="skill-card tilt" data-aos="fade-up" data-scope="frontend">
-          <div class="skill-head">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" class="skill-icon" />
-            <h3>HTML5</h3>
-          </div>
-          <p>Semantic, accessible markup with SEO-first structure.</p>
-          <div class="meter"><span style="--val:95%"></span></div>
-          <ul class="pills">
-            <li>ARIA</li><li>SEO</li><li>Semantics</li>
-          </ul>
-        </article>
-
-        <article class="skill-card tilt" data-aos="fade-up" data-aos-delay="60" data-scope="frontend">
-          <div class="skill-head">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" class="skill-icon" />
-            <h3>CSS3</h3>
-          </div>
-          <p>Fluid, responsive layouts with animation finesse.</p>
-          <div class="meter"><span style="--val:92%"></span></div>
-          <ul class="pills">
-            <li>Grid</li><li>Flexbox</li><li>Animations</li>
-          </ul>
-        </article>
-
-        <article class="skill-card tilt" data-aos="fade-up" data-aos-delay="120" data-scope="frontend">
-          <div class="skill-head">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" class="skill-icon" />
-            <h3>JavaScript</h3>
-          </div>
-          <p>Interactive UIs, data handling, and performance tuning.</p>
-          <div class="meter"><span style="--val:90%"></span></div>
-          <ul class="pills">
-            <li>ES6+</li><li>Fetch</li><li>Micro-interactions</li>
-          </ul>
-        </article>
-
-        <article class="skill-card tilt" data-aos="fade-up" data-aos-delay="180" data-scope="frontend">
-          <div class="skill-head">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" class="skill-icon" />
-            <h3>React</h3>
-          </div>
-          <p>Component patterns, hooks, and scalable architecture.</p>
-          <div class="meter"><span style="--val:86%"></span></div>
-          <ul class="pills">
-            <li>Hooks</li><li>SPA</li><li>State</li>
-          </ul>
-        </article>
-
-        <!-- Backend -->
-        <article class="skill-card tilt" data-aos="fade-up" data-scope="backend">
-          <div class="skill-head">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" class="skill-icon" />
-            <h3>Node.js</h3>
-          </div>
-          <p>API servers, auth, and streaming with best practices.</p>
-          <div class="meter"><span style="--val:82%"></span></div>
-          <ul class="pills">
-            <li>REST</li><li>Auth</li><li>Testing</li>
-          </ul>
-        </article>
-
-        <article class="skill-card tilt" data-aos="fade-up" data-aos-delay="60" data-scope="backend">
-          <div class="skill-head">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" class="skill-icon invert" />
-            <h3>Express</h3>
-          </div>
-          <p>Routing, middleware, validation, and security headers.</p>
-          <div class="meter"><span style="--val:78%"></span></div>
-          <ul class="pills">
-            <li>Routing</li><li>Helmet</li><li>Validation</li>
-          </ul>
-        </article>
-
-        <!-- Database -->
-        <article class="skill-card tilt" data-aos="fade-up" data-scope="database">
-          <div class="skill-head">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="" class="skill-icon" />
-            <h3>MongoDB</h3>
-          </div>
-          <p>Schema design, indexing, and performance tuning.</p>
-          <div class="meter"><span style="--val:85%"></span></div>
-          <ul class="pills">
-            <li>Mongoose</li><li>Indexes</li><li>Atlas</li>
-          </ul>
-        </article>
-
-        <article class="skill-card tilt" data-aos="fade-up" data-aos-delay="60" data-scope="database">
-          <div class="skill-head">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" class="skill-icon" />
-            <h3>MySQL</h3>
-          </div>
-          <p>Relational modeling and optimized SQL queries.</p>
-          <div class="meter"><span style="--val:74%"></span></div>
-          <ul class="pills">
-            <li>Joins</li><li>Indexes</li><li>ACID</li>
-          </ul>
-        </article>
-
-        <!-- Tools -->
-        <article class="skill-card tilt" data-aos="fade-up" data-scope="tools">
-          <div class="skill-head">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" class="skill-icon" />
-            <h3>Git & GitHub</h3>
-          </div>
-          <p>Branching, PRs, code reviews, and CI basics.</p>
-          <div class="meter"><span style="--val:90%"></span></div>
-          <ul class="pills">
-            <li>PRs</li><li>Actions</li><li>Issues</li>
-          </ul>
-        </article>
-
-        <article class="skill-card tilt" data-aos="fade-up" data-aos-delay="60" data-scope="tools">
-          <div class="skill-head">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" alt="" class="skill-icon invert" />
-            <h3>Vercel</h3>
-          </div>
-          <p>Zero-config deploys, previews, and analytics.</p>
-          <div class="meter"><span style="--val:82%"></span></div>
-          <ul class="pills">
-            <li>Deploy</li><li>Preview</li><li>CDN</li>
-          </ul>
-        </article>
-
-        <!-- Languages -->
-        <article class="skill-card tilt" data-aos="fade-up" data-scope="language">
-          <div class="skill-head">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="" class="skill-icon" />
-            <h3>C</h3>
-          </div>
-          <p>Low-level programming and performance thinking.</p>
-          <div class="meter"><span style="--val:88%"></span></div>
-          <ul class="pills">
-            <li>Pointers</li><li>Files</li><li>DSA</li>
-          </ul>
-        </article>
-
-        <article class="skill-card tilt" data-aos="fade-up" data-aos-delay="60" data-scope="language">
-          <div class="skill-head">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" class="skill-icon" />
-            <h3>Java</h3>
-          </div>
-          <p>OOP, collections, and problem solving.</p>
-          <div class="meter"><span style="--val:80%"></span></div>
-          <ul class="pills">
-            <li>OOP</li><li>Collections</li><li>CLI</li>
-          </ul>
-        </article>
-      </div>
-
-      <!-- CTA card -->
-      <div class="skills-cta glass" data-aos="zoom-in">
-        <div class="cta-content">
-          <h3>Let’s build something great</h3>
-          <p>Available for internships, freelance & exciting projects. I respond within 24 hours.</p>
-        </div>
-        <div class="cta-actions">
-          <a href="#contact" class="btn btn-grad"><i class="fa-regular fa-paper-plane"></i> Get in touch</a>
-          <a href="assets/MyresumeUpdated.pdf" target="_blank" class="btn btn-ghost"><i class="fa-solid fa-download"></i> Resume</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education -->
-  <section id="education" class="section container">
-    <div class="section-head" data-aos="fade-up">
-      <h2>Education</h2>
-      <p>My Academic Journey</p>
-    </div>
-
-    <div class="timeline">
-      <div class="t-item" data-aos="fade-up">
-        <span class="t-dot"></span>
-        <div class="t-card glass">
-          <h3>MCA — Graphic Era Hill University</h3>
-          <div class="meta">
-            <span><i class="fa-regular fa-calendar"></i> 2024 – 2026</span>
-          </div>
-          <p>Master’s in Computer Applications focused on modern web tech, software engineering, and real-world projects.</p>
+        <div class="socials">
+          <a
+            href="https://github.com/DeepanshuAdhikari549"
+            target="_blank"
+            aria-label="GitHub"
+            rel="noopener noreferrer"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/deepanshu-adhikari-1b768028b"
+            target="_blank"
+            aria-label="LinkedIn"
+            rel="noopener noreferrer"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/deepanshu_549"
+            target="_blank"
+            aria-label="Instagram"
+            rel="noopener noreferrer"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=deepanshuadhikari549@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Mail"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
         </div>
       </div>
 
-      <div class="t-item" data-aos="fade-up" data-aos-delay="100">
-        <span class="t-dot"></span>
-        <div class="t-card glass">
-          <h3>B.Sc Computer Science — SSJ University</h3>
-          <div class="meta">
-            <span><i class="fa-regular fa-calendar"></i> 2020 – 2023</span>
-          </div>
-          <p>Built a strong base in programming and problem-solving through hands-on projects and learning by doing.</p>
+      <div class="hero-right" data-aos="fade-left">
+        <div class="pfp-wrap tilt">
+          <img src="assets/img.jpg" alt="Deepanshu Adhikari" loading="eager" />
+          <span class="ring r1"></span>
+          <span class="ring r2"></span>
         </div>
       </div>
 
-      <div class="t-item" data-aos="fade-up" data-aos-delay="200">
-        <span class="t-dot"></span>
-        <div class="t-card glass">
-          <h3>Intermediate — Vivekanand Inter College</h3>
-          <div class="meta">
-            <span><i class="fa-regular fa-calendar"></i> 2019 – 2020</span>
+      <svg
+        class="wave"
+        viewBox="0 0 1440 120"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M0,64L48,58.7C96,53,192,43,288,42.7C384,43,480,53,576,74.7C672,96,768,128,864,133.3C960,139,1056,117,1152,96C1248,75,1344,53,1392,42.7L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+        ></path>
+      </svg>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>About Me</h2>
+          <p class="subtitle">Who I am & What I Focus On</p>
+        </div>
+
+        <div class="about-grid" data-aos="fade-up">
+          <div class="about-card">
+            <h3>🚀 Passion</h3>
+            <p>
+              I love building web applications that are fast, accessible, and
+              user-friendly. My focus is on writing clean code and designing
+              intuitive UIs.
+            </p>
           </div>
-          <p>Completed higher secondary (PCM). This is where my curiosity for tech and building things began.</p>
+          <div class="about-card">
+            <h3>💡 Current Focus</h3>
+            <p>
+              Exploring <b>fullstack development</b> with MERN, enhancing
+              performance, and contributing to open-source projects.
+            </p>
+          </div>
+          <div class="about-card">
+            <h3>🎯 Goal</h3>
+            <p>
+              To become a <b>proficient software engineer</b> who solves real
+              problems and creates impactful products.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Projects -->
-  <section id="projects" class="section section-alt">
-    <div class="container">
-      <div class="section-head" data-aos="fade-up">
-        <h2>Projects</h2>
-        <p>Some things I’ve built recently</p>
-      </div>
+    <!-- Skills (rebuilt) -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Skills</h2>
+          <p class="subtitle">
+            A modern stack for building fast, accessible, delightful apps
+          </p>
+        </div>
 
-      <div class="projects-grid">
-        <article class="project tilt" data-aos="fade-up">
-          <div class="p-thumb">
-            <img src="assets/Fitbae.png" alt="FitBae project" loading="lazy">
-            <span class="shine"></span>
-          </div>
-          <div class="p-body">
-            <h3>FitBae</h3>
-            <p>MERN fitness e-commerce: auth, cart, admin dashboard, and Stripe checkout.</p>
-            <div class="p-actions">
-              <a href="#" class="btn btn-ghost"><i class="fa-brands fa-github"></i> Code</a>
-              <a href="#" class="btn btn-grad"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+        <!-- Categories -->
+        <div class="skills-cats">
+          <button class="chip active" data-scope="all">All</button>
+          <button class="chip" data-scope="frontend">Frontend</button>
+          <button class="chip" data-scope="backend">Backend</button>
+          <button class="chip" data-scope="database">Database</button>
+          <button class="chip" data-scope="tools">Tools</button>
+          <button class="chip" data-scope="language">Languages</button>
+        </div>
+
+        <!-- Skill cards grid -->
+        <div class="skills-grid">
+          <!-- Frontend -->
+          <article
+            class="skill-card tilt"
+            data-aos="fade-up"
+            data-scope="frontend"
+          >
+            <div class="skill-head">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                alt=""
+                class="skill-icon"
+              />
+              <h3>HTML5</h3>
             </div>
-          </div>
-        </article>
+            <p>Semantic, accessible markup with SEO-first structure.</p>
+            <div class="meter"><span style="--val: 95%"></span></div>
+            <ul class="pills">
+              <li>ARIA</li>
+              <li>SEO</li>
+              <li>Semantics</li>
+            </ul>
+          </article>
 
-        <article class="project tilt" data-aos="fade-up" data-aos-delay="100">
-          <div class="p-thumb">
-            <img src="assets/Bank Management.png" alt="SwiftBank" loading="lazy">
-            <span class="shine"></span>
-          </div>
-          <div class="p-body">
-            <h3>SwiftBank</h3>
-            <p>Banking system in C with file persistence, transaction logs and search utilities.</p>
-            <div class="p-actions">
-              <a href="#" class="btn btn-ghost"><i class="fa-brands fa-github"></i> Code</a>
+          <article
+            class="skill-card tilt"
+            data-aos="fade-up"
+            data-aos-delay="60"
+            data-scope="frontend"
+          >
+            <div class="skill-head">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                alt=""
+                class="skill-icon"
+              />
+              <h3>CSS3</h3>
             </div>
-          </div>
-        </article>
+            <p>Fluid, responsive layouts with animation finesse.</p>
+            <div class="meter"><span style="--val: 92%"></span></div>
+            <ul class="pills">
+              <li>Grid</li>
+              <li>Flexbox</li>
+              <li>Animations</li>
+            </ul>
+          </article>
 
-        <article class="project coming tilt" data-aos="fade-up" data-aos-delay="200">
-          <div class="p-thumb placeholder">
-            <span>Coming Soon</span>
-          </div>
-          <div class="p-body">
-            <h3>New Project</h3>
-            <p>Full-stack app in progress exploring edge functions & realtime features.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-    <div class="divider"></div>
-  </section>
+          <article
+            class="skill-card tilt"
+            data-aos="fade-up"
+            data-aos-delay="120"
+            data-scope="frontend"
+          >
+            <div class="skill-head">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                alt=""
+                class="skill-icon"
+              />
+              <h3>JavaScript</h3>
+            </div>
+            <p>Interactive UIs, data handling, and performance tuning.</p>
+            <div class="meter"><span style="--val: 90%"></span></div>
+            <ul class="pills">
+              <li>ES6+</li>
+              <li>Fetch</li>
+              <li>Micro-interactions</li>
+            </ul>
+          </article>
 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2>Get in Touch</h2>
-        <p class="subtitle">Have a project or just want to say hi? Let's connect!</p>
-      </div>
+          <article
+            class="skill-card tilt"
+            data-aos="fade-up"
+            data-aos-delay="180"
+            data-scope="frontend"
+          >
+            <div class="skill-head">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                alt=""
+                class="skill-icon"
+              />
+              <h3>React</h3>
+            </div>
+            <p>Component patterns, hooks, and scalable architecture.</p>
+            <div class="meter"><span style="--val: 86%"></span></div>
+            <ul class="pills">
+              <li>Hooks</li>
+              <li>SPA</li>
+              <li>State</li>
+            </ul>
+          </article>
 
-      <div class="contact-grid">
-        <!-- Form (wired to your JS/EmailJS) -->
-        <form id="contactForm" class="contact-form" data-aos="fade-right">
-          <div class="input-group">
-            <i class="fas fa-user"></i>
-            <input name="from_name" type="text" placeholder="Your Name" required aria-label="Your name">
-          </div>
-          <div class="input-group">
-            <i class="fas fa-envelope"></i>
-            <input name="reply_to" type="email" placeholder="Your Email" required aria-label="Your email">
-          </div>
-          <div class="input-group">
-            <i class="fas fa-tag"></i>
-            <input name="subject" type="text" placeholder="Subject" aria-label="Subject">
-          </div>
-          <div class="input-group textarea">
-            <i class="fas fa-comment"></i>
-            <textarea name="message" placeholder="Your Message" required aria-label="Your message"></textarea>
-          </div>
-          <button type="submit" class="btn-submit"><i class="fa-regular fa-paper-plane"></i> Send Message</button>
-          <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
-        </form>
+          <!-- Backend -->
+          <article
+            class="skill-card tilt"
+            data-aos="fade-up"
+            data-scope="backend"
+          >
+            <div class="skill-head">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                alt=""
+                class="skill-icon"
+              />
+              <h3>Node.js</h3>
+            </div>
+            <p>API servers, auth, and streaming with best practices.</p>
+            <div class="meter"><span style="--val: 82%"></span></div>
+            <ul class="pills">
+              <li>REST</li>
+              <li>Auth</li>
+              <li>Testing</li>
+            </ul>
+          </article>
 
-        <!-- Quick Links -->
-        <div class="quick-links" data-aos="fade-left">
-          <h3>Quick Links</h3>
-          <div class="links-grid">
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=deepanshuadhikari549@gmail.com"
-              class="link-card" target="_blank" rel="noopener noreferrer"
+          <article
+            class="skill-card tilt"
+            data-aos="fade-up"
+            data-aos-delay="60"
+            data-scope="backend"
+          >
+            <div class="skill-head">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                alt=""
+                class="skill-icon invert"
+              />
+              <h3>Express</h3>
+            </div>
+            <p>Routing, middleware, validation, and security headers.</p>
+            <div class="meter"><span style="--val: 78%"></span></div>
+            <ul class="pills">
+              <li>Routing</li>
+              <li>Helmet</li>
+              <li>Validation</li>
+            </ul>
+          </article>
+
+          <!-- Database -->
+          <article
+            class="skill-card tilt"
+            data-aos="fade-up"
+            data-scope="database"
+          >
+            <div class="skill-head">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                alt=""
+                class="skill-icon"
+              />
+              <h3>MongoDB</h3>
+            </div>
+            <p>Schema design, indexing, and performance tuning.</p>
+            <div class="meter"><span style="--val: 85%"></span></div>
+            <ul class="pills">
+              <li>Mongoose</li>
+              <li>Indexes</li>
+              <li>Atlas</li>
+            </ul>
+          </article>
+
+          <article
+            class="skill-card tilt"
+            data-aos="fade-up"
+            data-aos-delay="60"
+            data-scope="database"
+          >
+            <div class="skill-head">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                alt=""
+                class="skill-icon"
+              />
+              <h3>MySQL</h3>
+            </div>
+            <p>Relational modeling and optimized SQL queries.</p>
+            <div class="meter"><span style="--val: 74%"></span></div>
+            <ul class="pills">
+              <li>Joins</li>
+              <li>Indexes</li>
+              <li>ACID</li>
+            </ul>
+          </article>
+
+          <!-- Tools -->
+          <article
+            class="skill-card tilt"
+            data-aos="fade-up"
+            data-scope="tools"
+          >
+            <div class="skill-head">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                alt=""
+                class="skill-icon"
+              />
+              <h3>Git & GitHub</h3>
+            </div>
+            <p>Branching, PRs, code reviews, and CI basics.</p>
+            <div class="meter"><span style="--val: 90%"></span></div>
+            <ul class="pills">
+              <li>PRs</li>
+              <li>Actions</li>
+              <li>Issues</li>
+            </ul>
+          </article>
+
+          <article
+            class="skill-card tilt"
+            data-aos="fade-up"
+            data-aos-delay="60"
+            data-scope="tools"
+          >
+            <div class="skill-head">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"
+                alt=""
+                class="skill-icon invert"
+              />
+              <h3>Vercel</h3>
+            </div>
+            <p>Zero-config deploys, previews, and analytics.</p>
+            <div class="meter"><span style="--val: 82%"></span></div>
+            <ul class="pills">
+              <li>Deploy</li>
+              <li>Preview</li>
+              <li>CDN</li>
+            </ul>
+          </article>
+
+          <!-- Languages -->
+          <article
+            class="skill-card tilt"
+            data-aos="fade-up"
+            data-scope="language"
+          >
+            <div class="skill-head">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
+                alt=""
+                class="skill-icon"
+              />
+              <h3>C</h3>
+            </div>
+            <p>Low-level programming and performance thinking.</p>
+            <div class="meter"><span style="--val: 88%"></span></div>
+            <ul class="pills">
+              <li>Pointers</li>
+              <li>Files</li>
+              <li>DSA</li>
+            </ul>
+          </article>
+
+          <article
+            class="skill-card tilt"
+            data-aos="fade-up"
+            data-aos-delay="60"
+            data-scope="language"
+          >
+            <div class="skill-head">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                alt=""
+                class="skill-icon"
+              />
+              <h3>Java</h3>
+            </div>
+            <p>OOP, collections, and problem solving.</p>
+            <div class="meter"><span style="--val: 80%"></span></div>
+            <ul class="pills">
+              <li>OOP</li>
+              <li>Collections</li>
+              <li>CLI</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- CTA card -->
+        <div class="skills-cta glass" data-aos="zoom-in">
+          <div class="cta-content">
+            <h3>Let’s build something great</h3>
+            <p>
+              Available for internships, freelance & exciting projects. I
+              respond within 24 hours.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a href="#contact" class="btn btn-grad"
+              ><i class="fa-regular fa-paper-plane"></i> Get in touch</a
             >
-              <i class="fas fa-envelope"></i>
-              <span>Email</span>
-            </a>
-            <a href="tel:+917668070347" class="link-card">
-              <i class="fas fa-phone"></i>
-              <span>Call</span>
-            </a>
-            <a href="https://github.com/DeepanshuAdhikari549" target="_blank" rel="noopener noreferrer" class="link-card">
-              <i class="fab fa-github"></i>
-              <span>GitHub</span>
-            </a>
-            <a href="https://www.linkedin.com/in/deepanshu-adhikari-1b768028b" target="_blank" rel="noopener noreferrer" class="link-card">
-              <i class="fab fa-linkedin"></i>
-              <span>LinkedIn</span>
-            </a>
-            <a href="https://www.instagram.com/deepanshu_549" target="_blank" rel="noopener noreferrer" class="link-card">
-              <i class="fab fa-instagram"></i>
-              <span>Instagram</span>
-            </a>
-            <a href="assets/MyresumeUpdated.pdf" target="_blank" class="link-card">
-              <i class="fas fa-file"></i>
-              <span>Resume</span>
-            </a>
-          </div>
-
-          <div class="whatsapp-btn">
-            <a href="https://wa.me/917668070347" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-            </a>
+            <a
+              href="assets/MyresumeUpdated.pdf"
+              target="_blank"
+              class="btn btn-ghost"
+              ><i class="fa-solid fa-download"></i> Resume</a
+            >
           </div>
         </div>
       </div>
+    </section>
+
+   <!-- Education -->
+<section id="education" class="section section-alt">
+  <div class="container edu-wrapper">
+    
+    <!-- Left: Education Timeline -->
+    <div class="edu-left" data-aos="fade-right">
+      <h2 class="edu-heading">Education</h2>
+      <div class="edu-timeline">
+
+        <div class="edu-step">
+          <div class="edu-dot"><i class="fas fa-laptop-code"></i></div>
+          <div class="edu-info">
+            <h3>MCA — Graphic Era Hill University</h3>
+            <span class="edu-date"><i class="fa-regular fa-calendar"></i> 2024 – 2026</span>
+            <p>Master’s in Computer Applications with focus on <b>modern web technologies</b>, software engineering, and real-world projects.</p>
+          </div>
+        </div>
+
+        <div class="edu-step">
+          <div class="edu-dot"><i class="fas fa-graduation-cap"></i></div>
+          <div class="edu-info">
+            <h3>B.Sc Computer Science — SSJ University</h3>
+            <span class="edu-date"><i class="fa-regular fa-calendar"></i> 2020 – 2023</span>
+            <p>Gained a <b>solid foundation in programming</b>, problem-solving, and hands-on development experience.</p>
+          </div>
+        </div>
+
+        <div class="edu-step">
+          <div class="edu-dot"><i class="fas fa-school"></i></div>
+          <div class="edu-info">
+            <h3>Intermediate — Vivekanand Inter College</h3>
+            <span class="edu-date"><i class="fa-regular fa-calendar"></i> 2019 – 2020</span>
+            <p>Higher Secondary (PCM). The place where my <b>curiosity for technology</b> started growing stronger.</p>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container ftr">
-      <p>© <span id="year"></span> Deepanshu Adhikari</p>
-      <a href="#hero" class="top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+    <!-- Right: Motive / Vision -->
+    <div class="edu-right glass" data-aos="fade-left">
+      <h3 class="motive-title">🌟 My Vision</h3>
+      <p>
+        Education is not just about degrees, it’s about <b>evolving daily</b>,  
+        challenging limits, and staying curious. My goal is to build <b>impactful solutions</b>  
+        that make life easier, smarter, and more connected.  
+      </p>
+      <p>
+        I believe in <b>learning by doing</b> and turning every challenge into an opportunity  
+        for growth. Every project I take is a step towards becoming a <b>better creator</b>.
+      </p>
+
+      <div class="signature">
+        <span class="name">— Deepanshu Adhikari</span>
+        <span class="sign">𝒟𝑒𝑒𝓅𝒶𝓃𝓈𝒽𝓊</span>
+      </div>
     </div>
-  </footer>
 
-  <!-- libs -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  </div>
+</section>
 
-  <!-- App -->
-  <script src="script.js"></script>
-</body>
+
+    <!-- Projects -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <div class="section-head" data-aos="fade-up">
+          <h2>Projects</h2>
+          <p>Some things I’ve built recently</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project tilt" data-aos="fade-up">
+            <div class="p-thumb">
+              <img
+                src="assets/Fitbae.png"
+                alt="FitBae project"
+                loading="lazy"
+              />
+              <span class="shine"></span>
+            </div>
+            <div class="p-body">
+              <h3>FitBae</h3>
+              <p>
+                MERN fitness e-commerce: auth, cart, admin dashboard, and Stripe
+                checkout.
+              </p>
+              <div class="p-actions">
+                <a href="#" class="btn btn-ghost"
+                  ><i class="fa-brands fa-github"></i> Code</a
+                >
+                <a href="#" class="btn btn-grad"
+                  ><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  Live</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article class="project tilt" data-aos="fade-up" data-aos-delay="100">
+            <div class="p-thumb">
+              <img
+                src="assets/Bank Management.png"
+                alt="SwiftBank"
+                loading="lazy"
+              />
+              <span class="shine"></span>
+            </div>
+            <div class="p-body">
+              <h3>SwiftBank</h3>
+              <p>
+                Banking system in C with file persistence, transaction logs and
+                search utilities.
+              </p>
+              <div class="p-actions">
+                <a href="#" class="btn btn-ghost"
+                  ><i class="fa-brands fa-github"></i> Code</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="project coming tilt"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="p-thumb placeholder">
+              <span>Coming Soon</span>
+            </div>
+            <div class="p-body">
+              <h3>New Project</h3>
+              <p>
+                Full-stack app in progress exploring edge functions & realtime
+                features.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="divider"></div>
+    </section>
+
+    <!-- Contact -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Get In <span>Touch</span></h2>
+      <p class="subtitle">Let’s create something awesome together 🚀</p>
+    </div>
+
+    <div class="contact-wrapper">
+      <!-- Left: Contact Form -->
+      <form id="contactForm" class="contact-form glass" data-aos="fade-right">
+        <div class="input-group">
+          <input name="from_name" type="text" placeholder="Your Name" required />
+        </div>
+        <div class="input-group">
+          <input name="reply_to" type="email" placeholder="Your Email" required />
+        </div>
+        <div class="input-group">
+          <input name="subject" type="text" placeholder="Subject" />
+        </div>
+        <div class="input-group">
+          <textarea name="message" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message ✉️</button>
+        <p id="formMessage" class="form-message"></p>
+      </form>
+
+      <!-- Right: Quick Links -->
+      <div class="quick-links glass" data-aos="fade-left">
+        <h3>Quick Links</h3>
+        <div class="links-grid">
+          <a href="mailto:deepanshuadhikari549@gmail.com" class="link-card">
+            <i class="fas fa-envelope"></i><span>Email</span>
+          </a>
+          <a href="tel:+917668070347" class="link-card">
+            <i class="fas fa-phone"></i><span>Call</span>
+          </a>
+          <a href="https://github.com/DeepanshuAdhikari549" target="_blank" class="link-card">
+            <i class="fab fa-github"></i><span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/deepanshu-adhikari-1b768028b" target="_blank" class="link-card">
+            <i class="fab fa-linkedin"></i><span>LinkedIn</span>
+          </a>
+          <a href="https://www.instagram.com/deepanshu_549" target="_blank" class="link-card">
+            <i class="fab fa-instagram"></i><span>Instagram</span>
+          </a>
+          <a href="assets/MyresumeUpdated.pdf" target="_blank" class="link-card">
+            <i class="fas fa-file"></i><span>Resume</span>
+          </a>
+        </div>
+        <div class="whatsapp-btn">
+          <a href="https://wa.me/917668070347" target="_blank">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <p class="footer-text">
+      © <span id="year"></span> Deepanshu · Crafted with <span class="heart">❤</span>
+    </p>
+    <div class="footer-socials">
+      <a href="https://github.com/DeepanshuAdhikari549" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/deepanshu-adhikari-1b768028b" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/deepanshu_549" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <a href="#hero" class="back-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+  </div>
+</footer>
+
+
+
+
+    <!-- libs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <!-- App -->
+    <script src="script.js"></script>
+  </body>
 </html>
