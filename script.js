@@ -447,6 +447,7 @@ Guard: prevent duplicate hash-scroll on load
   }
 })();
 
+
 // Always scroll to top when page is loaded/refreshed
 window.addEventListener("load", function () {
   window.scrollTo(0, 0);
