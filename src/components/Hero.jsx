@@ -44,8 +44,8 @@ export default function Hero() {
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center section-container pt-28 pb-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+    <section id="home" className="min-h-screen flex items-center section-container pt-20 sm:pt-28 pb-12 sm:pb-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
 
         {/* ── Left: Text ── */}
         <motion.div
@@ -68,7 +68,7 @@ export default function Hero() {
           </div>
 
           {/* Name */}
-          <h1 className={`text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight mb-5 ${isDark ? 'text-white' : 'text-slate-900'}`}>
+          <h1 className={`text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.1] sm:leading-[1.05] tracking-tight mb-5 ${isDark ? 'text-white' : 'text-slate-900'}`}>
             Hi, I'm{' '}
             <span className="text-gradient">Deepanshu</span>
             <span className={isDark ? 'text-slate-200' : 'text-slate-900'}>.</span>
@@ -136,13 +136,13 @@ export default function Hero() {
 
           {/* Stats */}
           <div
-            className="flex items-center gap-8 pt-8 border-t w-full"
+            className="flex flex-wrap items-center gap-6 sm:gap-8 pt-8 border-t w-full"
             style={{ borderColor: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)' }}
           >
             {stats.map((s, i) => (
-              <div key={i}>
-                <div className="text-2xl font-black" style={{ color: theme.primary }}>{s.value}</div>
-                <div className={`text-xs mt-0.5 font-medium ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>{s.label}</div>
+              <div key={i} className="min-w-[80px]">
+                <div className="text-xl sm:text-2xl font-black" style={{ color: theme.primary }}>{s.value}</div>
+                <div className={`text-[10px] sm:text-xs mt-0.5 font-medium ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>{s.label}</div>
               </div>
             ))}
           </div>
@@ -158,7 +158,7 @@ export default function Hero() {
           <div className="relative">
             {/* Photo frame with hover emoji */}
             <div
-              className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-[360px] lg:h-[360px] rounded-3xl overflow-hidden cursor-pointer group"
+              className="relative w-60 h-60 xs:w-72 xs:h-72 sm:w-80 sm:h-80 lg:w-[360px] lg:h-[360px] rounded-3xl overflow-hidden cursor-pointer group"
               style={{
                 border: `2px solid ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.08)'}`,
                 boxShadow: isDark
