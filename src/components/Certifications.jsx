@@ -25,51 +25,57 @@ const certifications = [
   },
 ];
 
+const platforms = [
+  { label: 'Coursera', emoji: '📚' },
+  { label: 'Oracle',   emoji: '☁️' },
+  { label: 'Meta',     emoji: '🏅' },
+];
+
 export default function Certifications() {
   const { isDark, theme } = useTheme();
 
   return (
-    <section id="certifications" className="section-container relative z-10 w-full">
+    <section id="certifications" className="section-container">
       <div className="flex flex-col items-center">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-sm font-mono font-bold uppercase tracking-widest mb-3" style={{ color: theme.primary }}>
+          <span className="section-label" style={{ color: theme.primary }}>
             — Verified credentials —
-          </p>
+          </span>
           <h2 className="section-title text-gradient">Certifications</h2>
           <div className="section-divider" />
-          <p className={`text-lg max-w-2xl mx-auto ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+          <p className={`text-base sm:text-lg max-w-2xl mx-auto ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
             Professional certifications validating my expertise and dedication to continuous learning.
           </p>
         </motion.div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8 w-full max-w-5xl mx-auto">
           {certifications.map((cert, i) => (
             <motion.div
               key={i}
-              className="glass-card flex flex-col p-8 group"
+              className="glass-card flex flex-col p-5 sm:p-8 group"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.6, delay: i * 0.2 }}
-              whileHover={{ rotateX: -3, rotateY: 4, scale: 1.02 }}
+              whileHover={{ rotateX: -2, rotateY: 3, scale: 1.01 }}
               style={{ transformStyle: 'preserve-3d' }}
             >
               {/* Top row */}
-              <div className="flex items-start justify-between mb-6">
+              <div className="flex items-start justify-between mb-5 sm:mb-6 gap-3">
                 <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl"
+                  className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center text-2xl sm:text-3xl flex-shrink-0"
                   style={{
                     background: `${cert.color}18`,
                     border: `2px solid ${cert.color}40`,
-                    boxShadow: `0 0 20px ${cert.color}30`,
+                    boxShadow: `0 0 18px ${cert.color}28`,
                   }}
                 >
                   {cert.emoji}
@@ -79,7 +85,7 @@ export default function Certifications() {
                   href={cert.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-full transition-all duration-300 hover:scale-105"
+                  className="flex items-center gap-1.5 text-xs font-semibold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all duration-300 hover:scale-105 flex-shrink-0"
                   style={{
                     background: `${theme.primary}15`,
                     border: `1px solid ${theme.cardBorder}`,
@@ -94,40 +100,42 @@ export default function Certifications() {
                     e.currentTarget.style.color = theme.primary;
                   }}
                 >
-                  Verify ↗
+                  <i className="fas fa-external-link-alt text-[10px]" />
+                  Verify
                 </a>
               </div>
 
               {/* Content */}
               <h3
-                className="text-xl font-bold mb-3 leading-tight group-hover:text-gradient transition-all"
+                className="text-base sm:text-xl font-bold mb-2 sm:mb-3 leading-tight"
                 style={{ color: isDark ? '#f1f5f9' : '#0f172a' }}
               >
                 {cert.title}
               </h3>
 
-              <div className={`flex items-center gap-4 text-sm mb-4 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
-                <span>🏛️ {cert.provider}</span>
-                <span>📅 {cert.year}</span>
+              <div className={`flex flex-wrap items-center gap-3 text-xs sm:text-sm mb-3 sm:mb-4 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
+                <span className="flex items-center gap-1">🏛️ {cert.provider}</span>
+                <span className="flex items-center gap-1">📅 {cert.year}</span>
               </div>
 
-              <p className={`text-sm leading-relaxed mb-6 flex-1 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+              <p className={`text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6 flex-1 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
                 {cert.desc}
               </p>
 
-              {/* Tags */}
+              {/* Skills */}
               <div
-                className="flex flex-wrap gap-2 pt-5"
+                className="flex flex-wrap gap-1.5 sm:gap-2 pt-4 sm:pt-5"
                 style={{ borderTop: `1px solid ${isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)'}` }}
               >
                 {cert.skills.map((skill, si) => (
                   <span
                     key={si}
-                    className="text-xs font-mono font-semibold px-2.5 py-1 rounded-lg"
+                    className="text-[10px] sm:text-xs font-semibold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-lg"
                     style={{
                       background: `${cert.color}12`,
                       border: `1px solid ${cert.color}30`,
                       color: cert.color,
+                      fontFamily: 'var(--font-mono)',
                     }}
                   >
                     {skill}
@@ -138,30 +146,38 @@ export default function Certifications() {
           ))}
         </div>
 
-        {/* Badge row */}
+        {/* Learning stats strip */}
         <motion.div
-          className={`mt-12 w-full max-w-5xl mx-auto rounded-2xl p-6 border flex flex-wrap items-center gap-6 justify-center ${
-            isDark ? 'bg-slate-900/50 border-slate-800' : 'bg-white/60 border-slate-200'
-          }`}
+          className="mt-8 sm:mt-12 w-full max-w-5xl mx-auto"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          <span className={`text-sm font-semibold ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
-            🎯 Continuously learning & growing
-          </span>
-          <div className="flex flex-wrap gap-2">
-            {['Coursera', 'Oracle', 'Meta'].map((p) => (
-              <span
-                key={p}
-                className={`px-3 py-1.5 text-xs font-bold rounded-lg ${isDark ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 text-slate-600'}`}
-              >
-                {p}
-              </span>
-            ))}
+          <div
+            className={`rounded-2xl p-4 sm:p-6 border flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center sm:justify-between ${
+              isDark ? 'bg-slate-900/50 border-slate-800' : 'bg-white/60 border-slate-200'
+            }`}
+          >
+            <span className={`text-sm font-semibold text-center sm:text-left ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+              🎯 Continuously learning &amp; growing — more certifications in progress
+            </span>
+            <div className="flex flex-wrap gap-2 justify-center">
+              {platforms.map((p) => (
+                <span
+                  key={p.label}
+                  className={`px-3 py-1.5 text-xs font-bold rounded-xl flex items-center gap-1.5 ${
+                    isDark ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 text-slate-600'
+                  }`}
+                >
+                  <span>{p.emoji}</span>
+                  {p.label}
+                </span>
+              ))}
+            </div>
           </div>
         </motion.div>
+
       </div>
     </section>
   );
