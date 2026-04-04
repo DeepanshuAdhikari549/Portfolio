@@ -66,10 +66,10 @@ export default function Hero() {
 
       <section
         id="home"
-        className="min-h-screen flex items-center w-full relative"
+        className="min-h-[100dvh] flex flex-col w-full relative"
         style={{ paddingTop: '4.5rem' }}
       >
-        <div className="section-container pt-2 pb-32 sm:pt-12 sm:pb-40 lg:pt-16 lg:pb-48">
+        <div className="section-container flex-1 flex flex-col justify-center pt-2 pb-12 sm:pt-12 sm:pb-20 lg:pt-16 lg:pb-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center w-full">
 
             {/* ── Left: Text ── */}
@@ -276,8 +276,8 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Marquee at bottom of hero */}
-        <div className="absolute bottom-0 left-0 right-0 py-6 sm:py-8 lg:py-10 bg-mesh/10">
+        {/* Marquee at bottom of hero in normal layout flow */}
+        <div className="w-full py-6 sm:py-8 lg:py-10 bg-mesh/10 mt-auto">
           <TechMarquee />
         </div>
       </section>
