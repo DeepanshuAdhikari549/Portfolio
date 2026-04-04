@@ -69,7 +69,7 @@ export default function Hero() {
         className="min-h-screen flex items-center w-full relative"
         style={{ paddingTop: '4.5rem' }}
       >
-        <div className="section-container py-8 sm:py-12 lg:py-16">
+        <div className="section-container pt-2 pb-36 sm:pt-12 sm:pb-40 lg:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center w-full">
 
             {/* ── Left: Text ── */}
