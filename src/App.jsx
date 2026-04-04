@@ -10,6 +10,8 @@ import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Background3D from './components/Background3D';
+import CursorGlow from './components/CursorGlow';
+import TechMarquee from './components/TechMarquee';
 import './index.css';
 
 function AppInner() {
@@ -21,6 +23,7 @@ function AppInner() {
 
   return (
     <div className={`relative min-h-screen font-sans selection:bg-primary/30`}>
+      <CursorGlow />
       <div className="bg-mesh" />
       <Background3D />
       <Navbar />

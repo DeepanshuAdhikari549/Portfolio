@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
+import CommandPalette from './CommandPalette';
 
 const NAV_LINKS = [
   { label: 'Home',            href: '#home'          },
@@ -115,6 +116,9 @@ export default function Navbar() {
 
           {/* Right controls */}
           <div className="flex items-center gap-1.5 sm:gap-2">
+            
+            {/* Search / Command Palette hint */}
+            <CommandPalette />
 
             {/* Theme picker */}
             <div className="relative" onClick={(e) => e.stopPropagation()}>
@@ -128,7 +132,7 @@ export default function Navbar() {
                 aria-label="Change color theme"
                 title="Change color theme"
               >
-                <i className="fas fa-palette text-xs" aria-hidden="true" />
+                <i className="fa-solid fa-palette text-xs" aria-hidden="true" />
               </button>
 
               <AnimatePresence>
@@ -175,7 +179,7 @@ export default function Navbar() {
               aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
               title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
             >
-              <i className={`fas ${isDark ? 'fa-sun' : 'fa-moon'} text-xs`} aria-hidden="true" />
+              <i className={`fa-solid ${isDark ? 'fa-sun' : 'fa-moon'} text-xs`} aria-hidden="true" />
             </button>
 
             {/* Mobile hamburger */}
@@ -187,7 +191,7 @@ export default function Navbar() {
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
             >
-              <i className={`fas ${menuOpen ? 'fa-times' : 'fa-bars'} text-xs`} aria-hidden="true" />
+              <i className={`fa-solid ${menuOpen ? 'fa-xmark' : 'fa-bars'} text-xs`} aria-hidden="true" />
             </button>
           </div>
         </div>

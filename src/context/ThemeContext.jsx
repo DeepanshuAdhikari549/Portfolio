@@ -72,14 +72,14 @@ export const themes = {
 
 export const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(true);
-  const [colorTheme, setColorTheme] = useState('midnight');
+  const [colorTheme, setColorTheme] = useState('emerald');
 
   useEffect(() => {
     const saved = localStorage.getItem('portfolio-dark');
     const savedTheme = localStorage.getItem('portfolio-theme');
     if (saved !== null) setIsDark(JSON.parse(saved));
     if (savedTheme && themes[savedTheme]) setColorTheme(savedTheme);
-    else setColorTheme('midnight');
+    else setColorTheme('emerald');
   }, []);
 
 

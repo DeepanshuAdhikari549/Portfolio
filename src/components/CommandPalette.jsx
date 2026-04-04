@@ -6,10 +6,10 @@ const SECTIONS = [
   { id: 'home',          label: 'Home',           icon: '🏠', desc: 'Back to the top'          },
   { id: 'about',         label: 'About',           icon: '👋', desc: 'Get to know me'           },
   { id: 'skills',        label: 'Skills',          icon: '⚡', desc: 'My tech stack'             },
-  { id: 'projects',      label: 'Projects',        icon: '🚀', desc: 'What I've built'           },
+  { id: 'projects',      label: 'Projects',        icon: '🚀', desc: "What I've built"           },
   { id: 'education',     label: 'Education',       icon: '🎓', desc: 'Academic background'       },
   { id: 'certifications',label: 'Certifications',  icon: '🏅', desc: 'Verified credentials'      },
-  { id: 'contact',       label: 'Contact',         icon: '📬', desc: 'Let\'s work together'       },
+  { id: 'contact',       label: 'Contact',         icon: '📬', desc: "Let's work together"       },
 ];
 
 const ACTIONS = [
@@ -91,7 +91,7 @@ export default function CommandPalette() {
         title="Open command palette"
         aria-label="Open command palette"
       >
-        <i className="fas fa-search text-[10px]" />
+        <i className="fa-solid fa-magnifying-glass text-[10px]" />
         <span>Search...</span>
         <kbd
           className={`ml-1 px-1.5 py-0.5 text-[9px] font-bold rounded border ${
@@ -133,7 +133,7 @@ export default function CommandPalette() {
                   isDark ? 'border-slate-800' : 'border-slate-100'
                 }`}
               >
-                <i className={`fas fa-search text-sm ${isDark ? 'text-slate-500' : 'text-slate-400'}`} />
+                <i className={`fa-solid fa-magnifying-glass text-sm ${isDark ? 'text-slate-500' : 'text-slate-400'}`} />
                 <input
                   ref={inputRef}
                   type="text"

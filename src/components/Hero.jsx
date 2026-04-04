@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
+import TechMarquee from './TechMarquee';
 
 const roles = [
   'MERN Stack Developer',
@@ -273,6 +274,11 @@ export default function Hero() {
               transition={{ duration: 1.4, repeat: Infinity }}
             />
           </motion.div>
+        </div>
+
+        {/* Marquee at bottom of hero */}
+        <div className="absolute bottom-0 left-0 right-0 py-6 sm:py-8 lg:py-10 bg-mesh/10">
+          <TechMarquee />
         </div>
       </section>
     </>
