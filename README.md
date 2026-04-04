@@ -47,7 +47,3 @@ Continuously improve with new technologies
 
 If you found this project useful or inspiring, consider giving it a ⭐ on GitHub.
 
-👨‍💻 Author
-
-Deepanshu Adhikari
-Frontend / Full Stack Developer
