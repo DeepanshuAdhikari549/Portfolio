@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
-import CommandPalette from './CommandPalette';
-
 const NAV_LINKS = [
   { label: 'Home',            href: '#home'          },
   { label: 'About',           href: '#about'         },
@@ -116,9 +114,6 @@ export default function Navbar() {
 
           {/* Right controls */}
           <div className="flex items-center gap-1.5 sm:gap-2">
-            
-            {/* Search / Command Palette hint */}
-            <CommandPalette />
 
             {/* Theme picker */}
             <div className="relative" onClick={(e) => e.stopPropagation()}>

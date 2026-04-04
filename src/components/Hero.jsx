@@ -69,7 +69,7 @@ export default function Hero() {
         className="min-h-screen flex items-center w-full relative"
         style={{ paddingTop: '4.5rem' }}
       >
-        <div className="section-container pt-2 pb-36 sm:pt-12 sm:pb-40 lg:py-16">
+        <div className="section-container pt-2 pb-32 sm:pt-12 sm:pb-40 lg:pt-16 lg:pb-48">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center w-full">
 
             {/* ── Left: Text ── */}
@@ -257,9 +257,9 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Scroll hint */}
+          {/* Scroll hint - raised above marquee */}
           <motion.div
-            className="hidden sm:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-1.5"
+            className="hidden sm:flex absolute bottom-32 lg:bottom-40 left-1/2 -translate-x-1/2 flex-col items-center gap-1.5 z-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2 }}
