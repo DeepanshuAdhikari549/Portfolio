@@ -1,15 +1,16 @@
-# Portfolio
-Deepanshu Adhikari | Portfolio Website Welcome to my personal portfolio website, designed to showcase my projects, skills, and education. Built with HTML, CSS, and JavaScript, this website provides a modern and responsive user experience, complete with theme toggling and a working contact form using EmailJS.
+# React + Vite
 
-View Portfolio - https://portfolio-deepanshu-projects.vercel.app/
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Features
+Currently, two official plugins are available:
 
-Responsive design for mobile, tablet, and desktop Dark/Light mode toggle with smooth transition Modern layout** with clean sections: Projects, Education, and Contact Contact form using EmailJS to receive messages directly to your inbox Click-to-email opens Gmail with a pre-filled recipient Project highlights with clear descriptions and structure Education section showing MCA (Graphic Era Hill University) with SGPA 7.8 Professional tag: Full Stack Developer
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Tech Stack
+## React Compiler
 
-HTML5 – Structure 
-CSS3 – Styling & responsive design 
-JavaScript – Interactivity and theme toggle 
-EmailJS – Backend-free contact form integration
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
