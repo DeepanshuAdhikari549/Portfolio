@@ -25,12 +25,7 @@ JavaScript (ES6+)
 AOS (Animate on Scroll)
 EmailJS
 Vercel (Deployment)
-📁 Project Structure
-Portfolio/
-│── index.html
-│── style.css
-│── script.js
-│── assets/
+
 ⚙️ Run Locally
 git clone https://github.com/DeepanshuAdhikari549/Portfolio.git
 cd Portfolio
@@ -39,16 +34,14 @@ open index.html
 
 The project is deployed on Vercel for fast and reliable hosting.
 
-You can easily deploy your own version by connecting your GitHub repository to Vercel.
-
 🎯 Objective
 Build a strong developer presence
 Showcase real-world projects
 Demonstrate UI/UX and frontend skills
 Continuously improve with new technologies
 📬 Contact
-📧 Email: your-email@example.com
-💼 LinkedIn: your-linkedin-url
+📧 Email: deepanshuadhikari549@gmail.com
+💼 LinkedIn: https://www.linkedin.com/in/deepanshuadhikari/
 🐙 GitHub: https://github.com/DeepanshuAdhikari549
 ⭐ Show Your Support
 
