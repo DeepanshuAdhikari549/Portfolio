@@ -16,7 +16,7 @@ function AppInner() {
   const { isDark } = useTheme();
 
   return (
-    <div className={`relative min-h-screen font-sans selection:bg-primary/30 ${isDark ? 'dark' : ''}`}>
+    <div className={`relative min-h-screen font-sans selection:bg-primary/30`}>
       <div className="bg-mesh" />
       <Background3D />
       <Navbar />

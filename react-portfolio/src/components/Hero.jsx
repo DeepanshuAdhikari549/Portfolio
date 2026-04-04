@@ -13,7 +13,6 @@ export default function Hero() {
   const { isDark, theme } = useTheme();
   const [roleIdx, setRoleIdx] = useState(0);
   const [typingText, setTypingText] = useState('');
-  const [showEmoji, setShowEmoji] = useState(false);
 
   // Typing effect
   useEffect(() => {
@@ -35,7 +34,7 @@ export default function Hero() {
     { icon: 'fab fa-github', href: 'https://github.com/DeepanshuAdhikari549', label: 'GitHub' },
     { icon: 'fab fa-linkedin-in', href: 'https://www.linkedin.com/in/deepanshu-adhikari-1b768028b', label: 'LinkedIn' },
     { icon: 'fab fa-instagram', href: 'https://www.instagram.com/deepanshu_549', label: 'Instagram' },
-    { icon: 'fas fa-envelope', href: 'mailto:deepanshuadhikari549@gmail.com', label: 'Email' },
+    { icon: 'fas fa-envelope', href: '#contact', label: 'Email' },
   ];
 
   const stats = [
@@ -102,7 +101,7 @@ export default function Hero() {
               View Projects
             </motion.a>
             <motion.a
-              href="/assets/Deepanshu_s_Resume (3).pdf"
+              href="/assets/Deepanshu_Resume.pdf"
               target="_blank"
               rel="noreferrer"
               className="btn-secondary"
@@ -160,8 +159,6 @@ export default function Hero() {
             {/* Photo frame with hover emoji */}
             <div
               className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-[360px] lg:h-[360px] rounded-3xl overflow-hidden cursor-pointer group"
-              onMouseEnter={() => setShowEmoji(true)}
-              onMouseLeave={() => setShowEmoji(false)}
               style={{
                 border: `2px solid ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.08)'}`,
                 boxShadow: isDark
@@ -179,16 +176,9 @@ export default function Hero() {
               {/* Subtle gradient bottom overlay */}
               <div
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-                style={{ background: 'rgba(0,0,0,0.35)' }}
+                style={{ background: 'rgba(0,0,0,0.15)' }}
               >
-                <motion.span
-                  className="text-7xl select-none"
-                  initial={{ scale: 0.5, opacity: 0 }}
-                  animate={showEmoji ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0 }}
-                  transition={{ type: 'spring', bounce: 0.5, duration: 0.4 }}
-                >
-                  😁
-                </motion.span>
+                {/* Overlay content removed for cleaner professional look */}
               </div>
 
               {/* Name tag at bottom */}

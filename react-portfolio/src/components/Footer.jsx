@@ -98,7 +98,7 @@ export default function Footer() {
             </h4>
             <div className="space-y-3">
               {[
-                { icon: '📧', label: 'deepanshuadhikari549@gmail.com', href: 'mailto:deepanshuadhikari549@gmail.com' },
+                { icon: '📧', label: 'deepanshuadhikari549@gmail.com', href: '#contact' },
                 { icon: '📍', label: 'India', href: '#' },
                 { icon: '💼', label: 'Open to Work', href: '#contact' },
               ].map((item, i) => (

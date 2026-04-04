@@ -17,20 +17,55 @@ export default function Contact() {
     e.preventDefault();
     setStatus('sending');
     
-    // Simulate real sending delay for UX
-    setTimeout(() => {
-      const { name, email, subject, message } = formData;
-      const mailtoLink = `mailto:deepanshuadhikari549@gmail.com?subject=${encodeURIComponent(
-        `[Portfolio] ${subject}`
-      )}&body=${encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-      )}`;
+    // Core EmailJS configuration using your exact provided keys
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_ri6yl0i';
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'PBwCqhNSduAQOx5I3';
+    // We try the custom template ID first, then fall back to the default one if it fails
+    let templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_default';
+
+    console.log('Attempting delivery via EmailJS...');
+    
+    // Initialize with public key
+    emailjs.init(publicKey);
+
+    try {
+      // Strategy 1: Attempt to send using the form reference
+      const result = await emailjs.sendForm(
+        serviceId,
+        templateId,
+        formRef.current,
+        publicKey
+      );
       
-      window.location.href = mailtoLink;
+      console.log('✅ Email delivered successfully:', result.text);
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setStatus('idle'), 5000);
-    }, 1200);
+    } catch (error) {
+       console.error('❌ Email failed with primary template:', error);
+       
+       // Strategy 2: If it was a template error, try 'template_default'
+       if (error?.text?.includes('template') || error?.message?.includes('template')) {
+          try {
+             console.log('Retrying with template_default...');
+             await emailjs.sendForm(serviceId, 'template_default', formRef.current, publicKey);
+             setStatus('success');
+             setFormData({ name: '', email: '', subject: '', message: '' });
+             setTimeout(() => setStatus('idle'), 5000);
+             return;
+          } catch (retryError) {
+             console.error('❌ Retry failed:', retryError);
+          }
+       }
+
+      setStatus('error');
+      
+      // Professional User Guidance
+      const finalError = error?.text || error?.message || 'Unknown configuration error';
+      alert(`Critical Error: ${finalError}\n\nFix Required:\n1. Open your EmailJS Dashboard.\n2. Go to "Email Templates".\n3. Create a template and copy the "Template ID".\n4. Paste it into your .env file as VITE_EMAILJS_TEMPLATE_ID.\n5. RESTART YOUR TERMINAL (npm run dev).`);
+      
+      setTimeout(() => setStatus('idle'), 5000);
+    }
   };
 
   const inputBase = `w-full px-4 py-3.5 rounded-xl border text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 ${
@@ -52,7 +87,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="section-container relative z-10 w-full">
+    <section id="contact" className="section-container relative z-10 w-full" style={{ scrollMarginTop: '80px' }}>
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <motion.div

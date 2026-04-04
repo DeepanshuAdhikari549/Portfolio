@@ -2,10 +2,11 @@ import React from "react";
 
 const ThemeSelector = ({ colorTheme, setColorTheme }) => {
     const themes = [
-        { id: "blue", icon: "fas fa-palette", title: "Blue Theme" },
-        { id: "green", icon: "fas fa-leaf", title: "Green Theme" },
-        { id: "purple", icon: "fas fa-gem", title: "Purple Theme" },
-        { id: "orange", icon: "fas fa-fire", title: "Orange Theme" },
+        { id: "midnight", icon: "fas fa-briefcase", title: "Professional Dark" },
+        { id: "cyber", icon: "fas fa-microchip", title: "Cyber Blue" },
+        { id: "aurora", icon: "fas fa-sparkles", title: "Aurora Purple" },
+        { id: "emerald", icon: "fas fa-leaf", title: "Emerald Green" },
+        { id: "rose", icon: "fas fa-heart", title: "Rose Pink" },
     ];
 
     return (

@@ -5,16 +5,16 @@ const ThemeContext = createContext();
 export const themes = {
   midnight: {
     id: 'midnight',
-    name: 'Midnight Premium',
-    emoji: '✨',
+    name: 'Professional Dark',
+    emoji: '🕴️',
     primary: '#6366f1',
-    secondary: '#0ea5e9',
-    accent: '#8b5cf6',
-    gradient: 'from-indigo-500 via-blue-500 to-cyan-500',
-    glow: 'rgba(99,102,241,0.35)',
-    glowSecondary: 'rgba(14,165,233,0.35)',
-    navActiveBg: 'rgba(99,102,241,0.12)',
-    cardBorder: 'rgba(99,102,241,0.25)',
+    secondary: '#38bdf8',
+    accent: '#818cf8',
+    gradient: 'from-indigo-600 via-blue-600 to-sky-500',
+    glow: 'rgba(99,102,241,0.3)',
+    glowSecondary: 'rgba(56,189,248,0.3)',
+    navActiveBg: 'rgba(99,102,241,0.1)',
+    cardBorder: 'rgba(99,102,241,0.2)',
   },
   cyber: {
     id: 'cyber',
@@ -87,8 +87,10 @@ export const ThemeProvider = ({ children }) => {
     localStorage.setItem('portfolio-dark', JSON.stringify(isDark));
     if (isDark) {
       document.documentElement.classList.add('dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
+      document.documentElement.setAttribute('data-theme', 'light');
     }
   }, [isDark]);
 
@@ -101,10 +103,12 @@ export const ThemeProvider = ({ children }) => {
     document.documentElement.style.setProperty('--color-glow', t.glow);
   }, [colorTheme]);
 
+  const toggleDark = () => setIsDark((prev) => !prev);
+
   const theme = themes[colorTheme];
 
   return (
-    <ThemeContext.Provider value={{ isDark, setIsDark, colorTheme, setColorTheme, theme }}>
+    <ThemeContext.Provider value={{ isDark, setIsDark, toggleDark, colorTheme, setColorTheme, theme }}>
       {children}
     </ThemeContext.Provider>
   );
