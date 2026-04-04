@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 
 const roles = [
-  'Full Stack Developer',
-  'AI Solutions Architect',
-  'Next.js Specialist',
-  'Python Developer',
+  'MERN Stack Developer',
+  'Software Engineer',
+  'React Frontend Expert',
+  'Node.js Developer',
 ];
 
 export default function Hero() {
@@ -38,8 +38,8 @@ export default function Hero() {
   ];
 
   const stats = [
-    { value: '2+', label: 'Years Exp.' },
-    { value: '10+', label: 'Projects' },
+    { value: 'Fresher', label: 'Experience' },
+    { value: '15+', label: 'Projects' },
     { value: '4+', label: 'Certificates' },
   ];
 

@@ -4,27 +4,27 @@ import { useTheme } from '../context/ThemeContext';
 
 const cards = [
   {
-    emoji: '🚀',
-    title: 'My Passion',
-    text: "I'm deeply passionate about creating innovative web solutions that solve real-world problems. My journey started in college and I've been building ever since.",
+    emoji: '💻',
+    title: 'What I Do',
+    text: 'I build full-stack web applications and AI-powered solutions using modern technologies like React, Node.js, and Machine Learning. I focus on creating real-world impactful products.',
   },
   {
-    emoji: '🔭',
+    emoji: '⚙️',
     title: 'Current Focus',
-    text: 'Mastering the MERN stack while exploring WebSockets, cloud deployment strategies, and high-level performance optimization techniques.',
+    text: 'Improving my MERN stack skills, working on scalable applications, and exploring AI integration, APIs, and deployment using platforms like Vercel and Render.',
   },
   {
-    emoji: '🎯',
-    title: 'Future Goals',
-    text: 'To become a top-tier software engineer who creates impactful products — challenging projects that push boundaries and continuously grow my full-stack expertise.',
+    emoji: '🚀',
+    title: 'Career Goal',
+    text: 'To become a skilled Full Stack Developer and build high-performance applications that solve real problems while continuously improving my development and problem-solving skills.',
   },
 ];
 
 const facts = [
-  { emoji: '📍', label: 'Location',  value: 'India'                        },
-  { emoji: '🎓', label: 'Degree',    value: 'MCA (Pursuing)'               },
-  { emoji: '📧', label: 'Email',     value: 'deepanshuadhikari549@gmail.com' },
-  { emoji: '✅', label: 'Status',    value: 'Open to Work'                 },
+  { emoji: '📍', label: 'Location', value: 'India' },
+  { emoji: '🎓', label: 'Degree', value: 'MCA (Pursuing)' },
+  { emoji: '📧', label: 'Email', value: 'deepanshuadhikari549@gmail.com' },
+  { emoji: '✅', label: 'Status', value: 'Open to Work' },
 ];
 
 export default function About() {
@@ -91,9 +91,8 @@ export default function About() {
         {facts.map((f, i) => (
           <div
             key={i}
-            className={`rounded-xl p-4 border ${
-              isDark ? 'bg-slate-900/50 border-slate-800' : 'bg-white border-slate-200 shadow-sm'
-            }`}
+            className={`rounded-xl p-4 border ${isDark ? 'bg-slate-900/50 border-slate-800' : 'bg-white border-slate-200 shadow-sm'
+              }`}
           >
             <p className={`text-xs font-bold uppercase tracking-widest mb-1.5 ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>
               {f.label}

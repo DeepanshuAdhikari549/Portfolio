@@ -24,27 +24,17 @@ const projects = [
     featured: true,
   },
   {
-    tags: ['Next.js', 'Healthcare', 'MERN'],
+    tags: ['React', 'Healthcare', 'MERN'],
     emoji: '🏥',
     title: 'MediCompare',
     desc: 'A modern healthcare platform that allows users to search, compare, and book hospitals and laboratory tests seamlessly.',
-    tech: ['Next.js', 'Node.js', 'MongoDB', 'React'],
+    tech: ['React', 'Node.js', 'Express', 'MongoDB'],
     live: 'https://medi-compare-omega.vercel.app',
     code: 'https://github.com/DeepanshuAdhikari549/MediCompare',
     featured: true,
   },
   {
-    tags: ['Python', 'ML', 'AI'],
-    emoji: '🩺',
-    title: 'Medical Cost Predictor',
-    desc: 'A machine learning-powered application that predicts medical insurance costs based on user health and demographic data.',
-    tech: ['Python', 'Streamlit', 'Scikit-learn', 'Pandas'],
-    live: 'https://medical-cost-predictor.vercel.app',
-    code: 'https://github.com/DeepanshuAdhikari549/Medical-Cost-Predictor',
-    featured: true,
-  },
-  {
-    tags: ['HTML', 'CSS', 'UI/UX'],
+    tags: ['HTML', 'CSS'],
     emoji: '📺',
     title: 'Netflix Clone',
     desc: 'A high-fidelity landing page clone of Netflix, focusing on high-fidelity design and fully responsive layout across all devices.',
@@ -62,7 +52,7 @@ const projects = [
     code: 'https://github.com/DeepanshuAdhikari549/Food-Delivery-Webpage',
   },
   {
-    tags: ['React', 'QR', 'Glassmorphism'],
+    tags: ['React', 'QR'],
     emoji: '📸',
     title: 'Portfolio QR Card',
     desc: 'A digital contact card featuring a QR generator, geolocation map, and a clean glassmorphic premium UI.',
@@ -87,6 +77,15 @@ const projects = [
     tech: ['JavaScript', 'HTML', 'CSS'],
     live: 'https://deepanshuadhikari549.github.io/Background-color-switcher/',
     code: 'https://github.com/DeepanshuAdhikari549/Background-color-switcher',
+  },
+  {
+    tags: ['Python', 'ML', 'AI'],
+    emoji: '🩺',
+    title: 'Medical Cost Predictor',
+    desc: 'Machine learning application that predicts medical insurance costs based on health data.',
+    tech: ['Python', 'Streamlit', 'Scikit-learn', 'Pandas'],
+    live: 'https://medical-cost-predictor.vercel.app',
+    code: 'https://github.com/DeepanshuAdhikari549/Medical-Cost-Predictor',
   },
 ];
 
@@ -124,13 +123,12 @@ export default function Projects() {
             <button
               key={f}
               onClick={() => setFilter(f)}
-              className={`px-5 py-2 text-sm font-semibold rounded-full border transition-all duration-300 ${
-                filter === f
+              className={`px-5 py-2 text-sm font-semibold rounded-full border transition-all duration-300 ${filter === f
                   ? 'text-white border-transparent shadow-[0_0_20px_rgba(0,0,0,0.2)]'
                   : isDark
-                  ? 'border-slate-700 text-slate-400 hover:border-slate-500 hover:text-slate-200 bg-slate-900/50'
-                  : 'border-slate-200 text-slate-500 hover:border-slate-400 hover:text-slate-700 bg-white shadow-sm'
-              }`}
+                    ? 'border-slate-700 text-slate-400 hover:border-slate-500 hover:text-slate-200 bg-slate-900/50'
+                    : 'border-slate-200 text-slate-500 hover:border-slate-400 hover:text-slate-700 bg-white shadow-sm'
+                }`}
               style={filter === f ? { background: 'var(--color-gradient)' } : {}}
             >
               {f}
@@ -139,8 +137,8 @@ export default function Projects() {
         </div>
 
         {/* Cards grid - Responsive & Smooth */}
-        <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" 
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
           layout
         >
           <AnimatePresence mode="popLayout">
@@ -189,9 +187,8 @@ export default function Projects() {
                     {p.tech.slice(0, 3).map((t) => (
                       <span
                         key={t}
-                        className={`text-[10px] px-2.5 py-1 rounded-md font-mono font-bold uppercase ${
-                          isDark ? 'bg-slate-800 text-slate-400' : 'bg-slate-100 text-slate-500'
-                        }`}
+                        className={`text-[10px] px-2.5 py-1 rounded-md font-mono font-bold uppercase ${isDark ? 'bg-slate-800 text-slate-400' : 'bg-slate-100 text-slate-500'
+                          }`}
                       >
                         {t}
                       </span>
@@ -214,11 +211,10 @@ export default function Projects() {
                       href={p.code}
                       target="_blank"
                       rel="noreferrer"
-                      className={`w-10 h-10 rounded-xl border flex items-center justify-center text-sm transition-all hover:scale-110 active:scale-95 ${
-                        isDark 
-                          ? 'border-slate-700 text-slate-400 hover:border-slate-500 hover:text-white bg-slate-900/40' 
+                      className={`w-10 h-10 rounded-xl border flex items-center justify-center text-sm transition-all hover:scale-110 active:scale-95 ${isDark
+                          ? 'border-slate-700 text-slate-400 hover:border-slate-500 hover:text-white bg-slate-900/40'
                           : 'border-slate-200 text-slate-400 hover:border-slate-400 hover:text-slate-900 bg-white'
-                      }`}
+                        }`}
                       title="Source Code"
                     >
                       <i className="fab fa-github" />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -14,6 +14,10 @@ import './index.css';
 
 function AppInner() {
   const { isDark } = useTheme();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className={`relative min-h-screen font-sans selection:bg-primary/30`}>

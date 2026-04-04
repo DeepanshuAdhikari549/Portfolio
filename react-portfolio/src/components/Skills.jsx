@@ -6,25 +6,23 @@ const tabs = ['Frontend', 'Backend', 'Tools'];
 
 const skills = {
   Frontend: [
-    { name: 'HTML5',      pct: 95, color: '#e34f26' },
-    { name: 'CSS3',       pct: 90, color: '#264de4' },
+    { name: 'HTML5', pct: 95, color: '#e34f26' },
+    { name: 'CSS3', pct: 90, color: '#264de4' },
     { name: 'JavaScript', pct: 85, color: '#f7df1e' },
-    { name: 'React',      pct: 88, color: '#61dafb' },
-    { name: 'Tailwind CSS', pct: 85, color: '#38bdf8' },
+    { name: 'React', pct: 88, color: '#61dafb' },
   ],
   Backend: [
-    { name: 'Node.js',   pct: 82, color: '#68a063' },
-    { name: 'Express',   pct: 80, color: '#ffffff'  },
-    { name: 'MongoDB',   pct: 78, color: '#4db33d'  },
-    { name: 'REST APIs', pct: 83, color: '#06b6d4'  },
+    { name: 'Node.js', pct: 82, color: '#68a063' },
+    { name: 'Express', pct: 80, color: '#ffffff' },
+    { name: 'MongoDB', pct: 78, color: '#4db33d' },
+    { name: 'REST APIs', pct: 83, color: '#06b6d4' },
   ],
   Tools: [
     { name: 'Git & GitHub', pct: 88, color: '#f05032' },
-    { name: 'VS Code',      pct: 93, color: '#007acc' },
-    { name: 'Postman',      pct: 80, color: '#ff6c37' },
-    { name: 'Linux',        pct: 72, color: '#fcc624' },
-    { name: 'Java',         pct: 70, color: '#5382a1' },
-    { name: 'C',            pct: 68, color: '#a8b9cc' },
+    { name: 'VS Code', pct: 93, color: '#007acc' },
+    { name: 'Postman', pct: 80, color: '#ff6c37' },
+    { name: 'Java', pct: 70, color: '#5382a1' },
+    { name: 'C', pct: 68, color: '#a8b9cc' },
   ],
 };
 
@@ -57,11 +55,10 @@ export default function Skills() {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
-              activeTab === tab
+            className={`px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${activeTab === tab
                 ? 'text-white shadow-md'
                 : isDark ? 'text-slate-400 hover:text-slate-200 bg-slate-800/60' : 'text-slate-500 hover:text-slate-700 bg-slate-100'
-            }`}
+              }`}
             style={activeTab === tab ? { background: 'var(--color-gradient)' } : {}}
           >
             {tab}
@@ -126,9 +123,8 @@ export default function Skills() {
           {['HTML5', 'CSS3', 'JavaScript', 'React', 'Node.js', 'Express', 'MongoDB', 'Git', 'Java', 'C', 'Tailwind', 'REST API'].map((t) => (
             <span
               key={t}
-              className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium border transition-all duration-200 hover:border-primary cursor-default ${
-                isDark ? 'bg-slate-900 border-slate-800 text-slate-400' : 'bg-white border-slate-200 text-slate-600 shadow-sm'
-              }`}
+              className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium border transition-all duration-200 hover:border-primary cursor-default ${isDark ? 'bg-slate-900 border-slate-800 text-slate-400' : 'bg-white border-slate-200 text-slate-600 shadow-sm'
+                }`}
             >
               {t}
             </span>

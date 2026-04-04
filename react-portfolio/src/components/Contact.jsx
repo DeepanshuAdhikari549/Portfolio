@@ -7,7 +7,7 @@ export default function Contact() {
   const { isDark, theme } = useTheme();
   const formRef = useRef(null);
   const [status, setStatus] = useState('idle');
-  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [formData, setFormData] = useState({ from_name: '', reply_to: '', subject: '', message: '' });
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -39,7 +39,7 @@ export default function Contact() {
       
       console.log('✅ Email delivered successfully:', result.text);
       setStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ from_name: '', reply_to: '', subject: '', message: '' });
       setTimeout(() => setStatus('idle'), 5000);
     } catch (error) {
        console.error('❌ Email failed with primary template:', error);
@@ -50,7 +50,7 @@ export default function Contact() {
              console.log('Retrying with template_default...');
              await emailjs.sendForm(serviceId, 'template_default', formRef.current, publicKey);
              setStatus('success');
-             setFormData({ name: '', email: '', subject: '', message: '' });
+             setFormData({ from_name: '', reply_to: '', subject: '', message: '' });
              setTimeout(() => setStatus('idle'), 5000);
              return;
           } catch (retryError) {
@@ -212,8 +212,8 @@ export default function Contact() {
                   <label className={`text-xs font-bold uppercase tracking-wider ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>Your Name</label>
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
+                    name="from_name"
+                    value={formData.from_name}
                     onChange={handleChange}
                     required
                     placeholder="John Doe"
@@ -225,8 +225,8 @@ export default function Contact() {
                   <label className={`text-xs font-bold uppercase tracking-wider ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>Your Email</label>
                   <input
                     type="email"
-                    name="email"
-                    value={formData.email}
+                    name="reply_to"
+                    value={formData.reply_to}
                     onChange={handleChange}
                     required
                     placeholder="john@example.com"
