@@ -17,7 +17,6 @@ const skills = {
     { name: 'Express', pct: 80, color: '#aaaaaa', icon: '🚂' },
     { name: 'MongoDB', pct: 78, color: '#4db33d', icon: '🍃' },
     { name: 'REST APIs', pct: 83, color: '#06b6d4', icon: '🔗' },
-    { name: 'Python', pct: 72, color: '#3776ab', icon: '🐍' },
   ],
   Tools: [
     { name: 'Git & GitHub', pct: 88, color: '#f05032', icon: '🐙' },

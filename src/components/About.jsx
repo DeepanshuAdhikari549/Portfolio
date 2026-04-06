@@ -11,7 +11,7 @@ export default function About() {
     fetch('https://api.github.com/users/DeepanshuAdhikari549')
       .then((r) => r.json())
       .then((d) => setGh(d))
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   const fadeUp = (delay = 0) => ({
@@ -55,12 +55,11 @@ export default function About() {
             I build full-stack web applications and AI-powered solutions using modern technologies like React, Node.js, and Machine Learning. Every project I ship is focused on solving a real-world problem with clean, maintainable code and a great user experience.
           </p>
           <div className="flex flex-wrap gap-2 mt-2">
-            {['React', 'Node.js', 'MongoDB', 'Express', 'Python', 'REST APIs'].map((t) => (
+            {['React', 'Node.js', 'MongoDB', 'Express', 'JAVA', 'C', 'Github', 'Vercel', 'Render', 'REST APIs'].map((t) => (
               <span
                 key={t}
-                className={`text-[10px] sm:text-xs px-2.5 py-1 rounded-lg font-semibold ${
-                  isDark ? 'bg-slate-800 text-slate-300 border border-slate-700' : 'bg-slate-100 text-slate-600 border border-slate-200'
-                }`}
+                className={`text-[10px] sm:text-xs px-2.5 py-1 rounded-lg font-semibold ${isDark ? 'bg-slate-800 text-slate-300 border border-slate-700' : 'bg-slate-100 text-slate-600 border border-slate-200'
+                  }`}
                 style={{ fontFamily: 'var(--font-mono)' }}
               >
                 {t}
@@ -91,15 +90,14 @@ export default function About() {
             <div className="grid grid-cols-2 gap-2 flex-1">
               {[
                 { label: 'Public Repos', value: gh.public_repos },
-                { label: 'Followers',    value: gh.followers    },
-                { label: 'Following',    value: gh.following    },
-                { label: 'Gists',        value: gh.public_gists },
+                { label: 'Followers', value: gh.followers },
+                { label: 'Following', value: gh.following },
+                { label: 'Gists', value: gh.public_gists },
               ].map((s) => (
                 <div
                   key={s.label}
-                  className={`rounded-xl p-3 flex flex-col gap-1 ${
-                    isDark ? 'bg-slate-800/60' : 'bg-slate-50'
-                  }`}
+                  className={`rounded-xl p-3 flex flex-col gap-1 ${isDark ? 'bg-slate-800/60' : 'bg-slate-50'
+                    }`}
                 >
                   <span className="text-lg font-black" style={{ color: theme.primary }}>{s.value}</span>
                   <span className={`text-[10px] font-medium leading-tight ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
@@ -144,14 +142,13 @@ export default function About() {
           <div className="flex flex-col gap-2.5 flex-1">
             {[
               { emoji: '📍', label: 'Location', value: 'India' },
-              { emoji: '🎓', label: 'Degree',   value: 'MCA (Pursuing)' },
-              { emoji: '📧', label: 'Email',    value: 'deepanshuadhikari549@gmail.com' },
+              { emoji: '🎓', label: 'Degree', value: 'MCA (Pursuing)' },
+              { emoji: '📧', label: 'Email', value: 'deepanshuadhikari549@gmail.com' },
             ].map((f) => (
               <div
                 key={f.label}
-                className={`rounded-xl px-3 py-2.5 border ${
-                  isDark ? 'bg-slate-800/50 border-slate-800' : 'bg-white border-slate-100'
-                }`}
+                className={`rounded-xl px-3 py-2.5 border ${isDark ? 'bg-slate-800/50 border-slate-800' : 'bg-white border-slate-100'
+                  }`}
               >
                 <p className={`text-[9px] font-bold uppercase tracking-widest mb-0.5 ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>
                   {f.label}
@@ -182,15 +179,14 @@ export default function About() {
           <div className="flex flex-wrap gap-3 mt-2">
             {[
               { icon: '🌐', label: 'Full Stack' },
-              { icon: '🤖', label: 'AI/ML'      },
-              { icon: '☁️', label: 'Cloud'      },
-              { icon: '🏆', label: 'Impact'     },
+              { icon: '🤖', label: 'AI/ML' },
+              { icon: '☁️', label: 'Cloud' },
+              { icon: '🏆', label: 'Impact' },
             ].map((g) => (
               <span
                 key={g.label}
-                className={`flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full ${
-                  isDark ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 text-slate-600'
-                }`}
+                className={`flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full ${isDark ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 text-slate-600'
+                  }`}
               >
                 <span>{g.icon}</span>
                 {g.label}
