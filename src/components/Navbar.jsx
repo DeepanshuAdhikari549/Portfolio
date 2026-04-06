@@ -115,8 +115,8 @@ export default function Navbar() {
           {/* Right controls */}
           <div className="flex items-center gap-1.5 sm:gap-2">
 
-            {/* Theme picker */}
-            <div className="relative" onClick={(e) => e.stopPropagation()}>
+            {/* Theme picker (Desktop only) */}
+            <div className="hidden lg:block relative" onClick={(e) => e.stopPropagation()}>
               <button
                 onClick={() => setThemeOpen((p) => !p)}
                 className={`w-9 h-9 rounded-lg flex items-center justify-center border transition-all duration-200 ${
@@ -163,10 +163,10 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
 
-            {/* Dark/Light toggle */}
+            {/* Dark/Light toggle (Desktop only) */}
             <button
               onClick={toggleDark}
-              className={`w-9 h-9 rounded-lg flex items-center justify-center border transition-all duration-200 ${
+              className={`hidden lg:flex w-9 h-9 rounded-lg items-center justify-center border transition-all duration-200 ${
                 isDark
                   ? 'border-slate-700 text-yellow-400 bg-slate-800/50 hover:bg-slate-700/50'
                   : 'border-slate-200 text-slate-500 bg-white hover:bg-slate-50 hover:text-slate-800'
@@ -230,11 +230,53 @@ export default function Navbar() {
                   </a>
                 ))}
 
+                {/* Mobile appearance settings */}
+                <div className={`mt-3 pt-4 border-t ${isDark ? 'border-slate-800' : 'border-slate-100'}`}>
+                  <p className={`px-4 mb-3 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
+                    Appearance
+                  </p>
+                  
+                  <div className="flex flex-col gap-2">
+                    {/* Theme selector in mobile menu */}
+                    <div className="grid grid-cols-5 gap-2 px-2">
+                      {COLOR_THEMES.map((t) => (
+                        <button
+                          key={t.key}
+                          onClick={() => setColorTheme(t.key)}
+                          className={`aspect-square rounded-xl flex items-center justify-center border-2 transition-all ${
+                            colorTheme === t.key
+                              ? 'border-[var(--color-primary)] scale-110 shadow-lg'
+                              : isDark ? 'border-slate-800 bg-slate-900' : 'border-slate-200 bg-slate-50'
+                          }`}
+                          title={t.label}
+                        >
+                          <span className="w-4 h-4 rounded-full" style={{ background: t.color }} />
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Dark mode toggle in mobile menu */}
+                    <button
+                      onClick={toggleDark}
+                      className={`mx-2 mt-2 flex items-center justify-between px-4 py-3 rounded-xl border transition-all ${
+                        isDark 
+                          ? 'bg-slate-900 border-slate-800 text-slate-300' 
+                          : 'bg-slate-50 border-slate-200 text-slate-600'
+                      }`}
+                    >
+                      <span className="text-sm font-medium">Dark Mode</span>
+                      <div className={`w-10 h-5 rounded-full relative transition-colors ${isDark ? 'bg-indigo-600' : 'bg-slate-300'}`}>
+                        <div className={`absolute top-1 w-3 h-3 rounded-full bg-white transition-all ${isDark ? 'left-6' : 'left-1'}`} />
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
                 {/* Mobile quick contact */}
-                <div className={`mt-3 pt-3 border-t ${isDark ? 'border-slate-800' : 'border-slate-100'}`}>
+                <div className="mt-2">
                   <a
                     href="mailto:deepanshuadhikari549@gmail.com"
-                    className="w-full btn-primary justify-center text-sm"
+                    className="w-full btn-primary justify-center text-sm py-3.5"
                     onClick={() => setMenuOpen(false)}
                   >
                     <i className="fas fa-envelope text-xs" />
