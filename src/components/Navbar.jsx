@@ -20,7 +20,7 @@ const COLOR_THEMES = [
 ];
 
 export default function Navbar() {
-  const { isDark, toggleDark, colorTheme, setColorTheme } = useTheme();
+  const { isDark, toggleDark, colorTheme, setColorTheme, theme } = useTheme();
   const [active, setActive]       = useState('home');
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
@@ -195,7 +195,7 @@ export default function Navbar() {
         <AnimatePresence>
           {menuOpen && (
             <motion.nav
-              className={`lg:hidden border-t ${
+              className={`lg:hidden border-t overflow-hidden ${
                 isDark ? 'bg-slate-950/98 border-slate-800' : 'bg-white/98 border-slate-200'
               } backdrop-blur-xl`}
               initial={{ opacity: 0, height: 0 }}
