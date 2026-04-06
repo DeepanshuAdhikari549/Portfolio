@@ -33,7 +33,7 @@ export default function Navbar() {
       const sections = NAV_LINKS.map((l) => l.href.slice(1));
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
-        if (el && el.getBoundingClientRect().top <= 130) {
+        if (el && el.getBoundingClientRect().top <= 140) {
           setActive(sections[i]);
           break;
         }
@@ -42,6 +42,29 @@ export default function Navbar() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  const scrollToSection = (e, href) => {
+    e.preventDefault();
+    const id = href.slice(1);
+    const element = document.getElementById(id);
+    const offset = 80; // Offset for the fixed header
+    
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      setMenuOpen(false); // Close menu first
+      
+      // Delay slightly to let the menu close animation start or complete
+      setTimeout(() => {
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+        setActive(id);
+      }, 50);
+    }
+  };
 
   // Close theme menu when clicking outside
   useEffect(() => {
@@ -96,7 +119,7 @@ export default function Navbar() {
                       ? isDark ? 'text-white' : 'text-slate-900'
                       : isDark ? 'text-slate-400 hover:text-slate-200' : 'text-slate-500 hover:text-slate-800'
                   }`}
-                  onClick={() => setActive(link.href.slice(1))}
+                  onClick={(e) => scrollToSection(e, link.href)}
                 >
                   {link.label}
                   {isActive && (
@@ -186,7 +209,7 @@ export default function Navbar() {
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
             >
-              <i className={`fa-solid ${menuOpen ? 'fa-xmark' : 'fa-bars'} text-xs`} aria-hidden="true" />
+              <i className={`fa-solid ${menuOpen ? 'fa-xmark' : 'fa-ellipsis-vertical'} text-xs`} aria-hidden="true" />
             </button>
           </div>
         </div>
@@ -212,13 +235,13 @@ export default function Navbar() {
                     className={`py-3 px-4 rounded-xl text-sm font-medium transition-colors duration-150 flex items-center gap-3 ${
                       active === link.href.slice(1)
                         ? isDark
-                          ? 'bg-slate-800 text-white'
-                          : 'bg-slate-100 text-slate-900'
+                          ? 'bg-white/10 text-white shadow-sm ring-1 ring-white/10'
+                          : 'bg-slate-900 text-white shadow-md'
                         : isDark
-                          ? 'text-slate-400 hover:text-white hover:bg-slate-800/60'
-                          : 'text-slate-500 hover:text-slate-800 hover:bg-slate-50'
+                          ? 'text-slate-400 hover:text-white hover:bg-white/5'
+                          : 'text-slate-500 hover:text-slate-900 hover:bg-slate-100'
                     }`}
-                    onClick={() => { setActive(link.href.slice(1)); setMenuOpen(false); }}
+                    onClick={(e) => scrollToSection(e, link.href)}
                   >
                     {active === link.href.slice(1) && (
                       <span
@@ -232,43 +255,45 @@ export default function Navbar() {
 
                 {/* Mobile appearance settings */}
                 <div className={`mt-3 pt-4 border-t ${isDark ? 'border-slate-800' : 'border-slate-100'}`}>
-                  <p className={`px-4 mb-3 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
+                  <p className={`px-4 mb-3 text-[10px] uppercase tracking-[0.15em] font-black ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>
                     Appearance
                   </p>
                   
                   <div className="flex flex-col gap-2">
-                    {/* Theme selector in mobile menu */}
-                    <div className="grid grid-cols-5 gap-2 px-2">
-                      {COLOR_THEMES.map((t) => (
-                        <button
-                          key={t.key}
-                          onClick={() => setColorTheme(t.key)}
-                          className={`aspect-square rounded-xl flex items-center justify-center border-2 transition-all ${
-                            colorTheme === t.key
-                              ? 'border-[var(--color-primary)] scale-110 shadow-lg'
-                              : isDark ? 'border-slate-800 bg-slate-900' : 'border-slate-200 bg-slate-50'
-                          }`}
-                          title={t.label}
-                        >
-                          <span className="w-4 h-4 rounded-full" style={{ background: t.color }} />
-                        </button>
-                      ))}
-                    </div>
-
-                    {/* Dark mode toggle in mobile menu */}
-                    <button
-                      onClick={toggleDark}
-                      className={`mx-2 mt-2 flex items-center justify-between px-4 py-3 rounded-xl border transition-all ${
-                        isDark 
-                          ? 'bg-slate-900 border-slate-800 text-slate-300' 
-                          : 'bg-slate-50 border-slate-200 text-slate-600'
-                      }`}
-                    >
-                      <span className="text-sm font-medium">Dark Mode</span>
-                      <div className={`w-10 h-5 rounded-full relative transition-colors ${isDark ? 'bg-indigo-600' : 'bg-slate-300'}`}>
-                        <div className={`absolute top-1 w-3 h-3 rounded-full bg-white transition-all ${isDark ? 'left-6' : 'left-1'}`} />
+                      {/* Theme selector in mobile menu */}
+                      <div className="grid grid-cols-5 gap-2 px-2">
+                        {COLOR_THEMES.map((t) => (
+                          <button
+                            key={t.key}
+                            onClick={() => setColorTheme(t.key)}
+                            className={`aspect-square rounded-xl flex items-center justify-center border-2 transition-all ${
+                              colorTheme === t.key
+                                ? 'border-[var(--color-primary)] scale-110 shadow-[0_0_15px_rgba(var(--color-primary-rgb),0.3)] bg-white/5'
+                                : isDark 
+                                  ? 'border-slate-800/50 bg-slate-900/50 hover:border-slate-700' 
+                                  : 'border-slate-200 bg-white hover:border-slate-300'
+                            }`}
+                            title={t.label}
+                          >
+                            <span className="w-5 h-5 rounded-full shadow-inner" style={{ background: t.color }} />
+                          </button>
+                        ))}
                       </div>
-                    </button>
+
+                      {/* Dark mode toggle in mobile menu */}
+                      <button
+                        onClick={toggleDark}
+                        className={`mx-2 mt-2 flex items-center justify-between px-4 py-3 rounded-xl border transition-all ${
+                          isDark 
+                            ? 'bg-slate-900/50 border-slate-800 text-slate-200 hover:bg-slate-800/50' 
+                            : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50 shadow-sm'
+                        }`}
+                      >
+                        <span className="text-sm font-semibold">Dark Mode</span>
+                        <div className={`w-11 h-6 rounded-full relative transition-colors ${isDark ? 'bg-indigo-600' : 'bg-slate-200'}`}>
+                          <div className={`absolute top-1 w-4 h-4 rounded-full bg-white shadow-sm transition-all ${isDark ? 'left-6' : 'left-1'}`} />
+                        </div>
+                      </button>
                   </div>
                 </div>
 
@@ -276,10 +301,10 @@ export default function Navbar() {
                 <div className="mt-2">
                   <a
                     href="mailto:deepanshuadhikari549@gmail.com"
-                    className="w-full btn-primary justify-center text-sm py-3.5"
+                    className="w-full btn-primary justify-center text-xs py-3 rounded-xl shadow-lg"
                     onClick={() => setMenuOpen(false)}
                   >
-                    <i className="fas fa-envelope text-xs" />
+                    <i className="fas fa-envelope text-[10px]" />
                     Send Email
                   </a>
                 </div>
