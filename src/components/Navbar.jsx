@@ -232,14 +232,14 @@ export default function Navbar() {
                   <a
                     key={link.href}
                     href={link.href}
-                    className={`py-3 px-4 rounded-xl text-sm font-medium transition-colors duration-150 flex items-center gap-3 ${
+                    className={`py-3 px-4 rounded-xl text-sm font-bold transition-colors duration-150 flex items-center gap-3 ${
                       active === link.href.slice(1)
                         ? isDark
                           ? 'bg-white/10 text-white shadow-sm ring-1 ring-white/10'
                           : 'bg-slate-900 text-white shadow-md'
                         : isDark
                           ? 'text-slate-400 hover:text-white hover:bg-white/5'
-                          : 'text-slate-500 hover:text-slate-900 hover:bg-slate-100'
+                          : 'text-slate-900 hover:text-slate-950 hover:bg-slate-100'
                     }`}
                     onClick={(e) => scrollToSection(e, link.href)}
                   >

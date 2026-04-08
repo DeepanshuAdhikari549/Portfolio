@@ -9,7 +9,7 @@ const projects = [
     title: 'FitBae Clothing',
     desc: 'A fashion-forward clothing e-commerce platform featuring a complete user experience for browsing and purchasing apparel.',
     tech: ['React', 'Node.js', 'Express', 'MongoDB'],
-    live: 'https://fitbae-backend-steel.vercel.app',
+    live: 'https://fitbae-frontend-five.vercel.app',
     code: 'https://github.com/DeepanshuAdhikari549/E-commerce-website',
     featured: true,
   },
