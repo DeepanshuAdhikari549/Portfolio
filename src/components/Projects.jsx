@@ -26,11 +26,11 @@ const projects = [
   {
     tags: ['React', 'Healthcare', 'MERN'],
     emoji: '🏥',
-    title: 'MediCompare',
+    title: 'Mediora',
     desc: 'A modern healthcare platform that allows users to search, compare, and book hospitals and laboratory tests seamlessly.',
     tech: ['React', 'Node.js', 'Express', 'MongoDB'],
     live: 'https://medi-compare-omega.vercel.app',
-    code: 'https://github.com/DeepanshuAdhikari549/MediCompare',
+    code: 'https://github.com/DeepanshuAdhikari549/Mediora',
     featured: true,
   },
   {
