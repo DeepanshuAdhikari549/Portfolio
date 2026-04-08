@@ -227,25 +227,25 @@ export default function Navbar() {
               transition={{ duration: 0.22, ease: 'easeInOut' }}
               aria-label="Mobile navigation"
             >
-              <div className="flex flex-col py-3 px-4 gap-1">
+              <div className="flex flex-col py-4 px-4 gap-2">
                 {NAV_LINKS.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}
-                    className={`py-3 px-4 rounded-xl text-sm font-bold transition-colors duration-150 flex items-center gap-3 ${
+                    className={`py-3.5 px-4 rounded-xl text-base font-bold transition-all duration-200 flex items-center justify-center gap-3 text-center ${
                       active === link.href.slice(1)
                         ? isDark
-                          ? 'bg-white/10 text-white shadow-sm ring-1 ring-white/10'
-                          : 'bg-slate-900 text-white shadow-md'
+                          ? 'bg-white/10 text-white shadow-sm ring-1 ring-white/10 scale-[1.02]'
+                          : 'bg-slate-900 text-white shadow-md scale-[1.02]'
                         : isDark
                           ? 'text-slate-400 hover:text-white hover:bg-white/5'
-                          : 'text-slate-900 hover:text-slate-950 hover:bg-slate-100'
+                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                     }`}
                     onClick={(e) => scrollToSection(e, link.href)}
                   >
                     {active === link.href.slice(1) && (
                       <span
-                        className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                        className="w-1.5 h-1.5 rounded-full flex-shrink-0 absolute left-8"
                         style={{ background: theme.primary }}
                       />
                     )}
