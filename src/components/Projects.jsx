@@ -34,6 +34,16 @@ const projects = [
     featured: true,
   },
   {
+    tags: ['React', 'SaaS', 'Tailwind CSS'],
+    emoji: '⚡',
+    title: 'QuickSaaS Base',
+    desc: 'A professional and human-centric SaaS template with a premium light-themed user interface and smooth modern interactions.',
+    tech: ['React', 'Vite', 'Tailwind CSS'],
+    live: 'https://quick-saa-s-app.vercel.app',
+    code: 'https://github.com/DeepanshuAdhikari549/Quick-SaaS-App',
+    featured: true,
+  },
+  {
     tags: ['HTML', 'CSS'],
     emoji: '📺',
     title: 'Netflix Clone',
