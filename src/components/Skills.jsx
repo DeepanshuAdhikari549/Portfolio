@@ -6,31 +6,33 @@ const tabs = ['Frontend', 'Backend', 'Tools'];
 
 const skills = {
   Frontend: [
-    { name: 'HTML5', pct: 95, color: '#e34f26', icon: '🌐' },
-    { name: 'CSS3', pct: 90, color: '#264de4', icon: '🎨' },
-    { name: 'JavaScript', pct: 85, color: '#f7df1e', icon: '⚡' },
-    { name: 'React', pct: 88, color: '#61dafb', icon: '⚛️' },
-    { name: 'Tailwind', pct: 82, color: '#38bdf8', icon: '💨' },
+    { name: 'HTML5', color: '#e34f26', icon: '🌐' },
+    { name: 'CSS3', color: '#264de4', icon: '🎨' },
+    { name: 'JavaScript', color: '#f7df1e', icon: '⚡' },
+    { name: 'React', color: '#61dafb', icon: '⚛️' },
+    { name: 'Tailwind', color: '#38bdf8', icon: '💨' },
   ],
   Backend: [
-    { name: 'Node.js', pct: 82, color: '#68a063', icon: '🟢' },
-    { name: 'Express', pct: 80, color: '#aaaaaa', icon: '🚂' },
-    { name: 'MongoDB', pct: 78, color: '#4db33d', icon: '🍃' },
-    { name: 'REST APIs', pct: 83, color: '#06b6d4', icon: '🔗' },
+    { name: 'Node.js', color: '#68a063', icon: '🟢' },
+    { name: 'Express', color: '#aaaaaa', icon: '🚂' },
+    { name: 'MongoDB', color: '#4db33d', icon: '🍃' },
+    { name: 'REST APIs', color: '#06b6d4', icon: '🔗' },
   ],
   Tools: [
-    { name: 'Git & GitHub', pct: 88, color: '#f05032', icon: '🐙' },
-    { name: 'VS Code', pct: 93, color: '#007acc', icon: '⌨️' },
-    { name: 'Postman', pct: 80, color: '#ff6c37', icon: '📮' },
-    { name: 'Java', pct: 70, color: '#5382a1', icon: '☕' },
-    { name: 'C', pct: 68, color: '#a8b9cc', icon: '🔧' },
+    { name: 'Git & GitHub', color: '#f05032', icon: '🐙' },
+    { name: 'VS Code', color: '#007acc', icon: '⌨️' },
+    { name: 'Postman', color: '#ff6c37', icon: '📮' },
+    { name: 'Vercel', color: '#000000', icon: '▲' },
+    { name: 'Render', color: '#46e3b7', icon: '🚀' },
+    { name: 'Java', color: '#5382a1', icon: '☕' },
+    { name: 'C', color: '#a8b9cc', icon: '🔧' },
   ],
 };
 
 const techLogos = [
   'HTML5', 'CSS3', 'JavaScript', 'React', 'Node.js',
   'Express', 'MongoDB', 'GitHub', 'Java', 'C',
-  'REST API', 'Postman',
+  'REST API', 'Postman', 'Vercel', 'Render',
 ];
 
 export default function Skills() {
@@ -75,7 +77,7 @@ export default function Skills() {
         ))}
       </div>
 
-      {/* Skills list */}
+      {/* Skills grid — pill cards, no percentages */}
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTab}
@@ -85,38 +87,23 @@ export default function Skills() {
           exit={{ opacity: 0, y: -12 }}
           transition={{ duration: 0.22 }}
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+          <div className="flex flex-wrap gap-3 justify-center">
             {skills[activeTab].map((skill, i) => (
               <motion.div
                 key={skill.name}
-                initial={{ opacity: 0, x: -12 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.06 }}
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: i * 0.07 }}
+                whileHover={{ scale: 1.07 }}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border font-semibold text-sm cursor-default transition-all duration-200 ${
+                  isDark
+                    ? 'bg-slate-800/70 border-slate-700 text-slate-200 hover:border-slate-500'
+                    : 'bg-white border-slate-200 text-slate-800 shadow-sm hover:border-slate-300'
+                }`}
+                style={{ borderLeftColor: skill.color, borderLeftWidth: 3 }}
               >
-                <div className="flex justify-between items-center mb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="text-base">{skill.icon}</span>
-                    <span className={`text-xs sm:text-sm font-semibold ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>
-                      {skill.name}
-                    </span>
-                  </div>
-                  <span
-                    className="text-xs font-bold tabular-nums"
-                    style={{ color: skill.color, fontFamily: 'var(--font-mono)' }}
-                  >
-                    {skill.pct}%
-                  </span>
-                </div>
-                <div className={`h-1.5 rounded-full overflow-hidden ${isDark ? 'bg-slate-800' : 'bg-slate-100'}`}>
-                  <motion.div
-                    className="h-full rounded-full"
-                    style={{ background: skill.color }}
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.pct}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.9, delay: i * 0.06, ease: 'easeOut' }}
-                  />
-                </div>
+                <span className="text-lg leading-none">{skill.icon}</span>
+                <span>{skill.name}</span>
               </motion.div>
             ))}
           </div>
