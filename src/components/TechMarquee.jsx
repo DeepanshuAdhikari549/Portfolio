@@ -1,71 +1,61 @@
 import React from 'react';
-import { useTheme } from '../context/ThemeContext';
 
 const TECHS = [
-  { name: 'React',       icon: '⚛️' },
-  { name: 'Node.js',     icon: '🟢' },
-  { name: 'MongoDB',     icon: '🍃' },
-  { name: 'JavaScript',  icon: '⚡' },
-  { name: 'Express',     icon: '🚂' },
-  { name: 'Python',      icon: '🐍' },
-  { name: 'Tailwind',    icon: '💨' },
-  { name: 'Git',         icon: '🐙' },
-  { name: 'REST API',    icon: '🔗' },
-  { name: 'HTML5',       icon: '🌐' },
-  { name: 'CSS3',        icon: '🎨' },
-  { name: 'Java',        icon: '☕' },
-  { name: 'VS Code',     icon: '⌨️' },
-  { name: 'Postman',     icon: '📮' },
-  { name: 'Vercel',      icon: '▲' },
-  { name: 'Render',      icon: '🌊' },
+  { name: 'Python' },
+  { name: 'SQL' },
+  { name: 'Java' },
+  { name: 'Spring Boot' },
+  { name: 'ETL Pipelines' },
+  { name: 'Customer Data Platforms (CDP)' },
+  { name: 'ClickHouse' },
+  { name: 'PostgreSQL' },
+  { name: 'Docker' },
+  { name: 'Docker Compose' },
+  { name: 'REST APIs' },
+  { name: 'Spring Data JPA' },
+  { name: 'Spring Security' },
+  { name: 'MySQL' },
+  { name: 'Linux' },
+  { name: 'Git & GitHub' },
+  { name: 'Data Ingestion' },
+  { name: 'Data Quality Validation' },
 ];
 
-// Duplicate for seamless loop
 const ITEMS = [...TECHS, ...TECHS];
 
 export default function TechMarquee() {
-  const { isDark, theme } = useTheme();
-
   return (
-    <div className="w-full overflow-hidden py-4 sm:py-6 relative">
+    <div className="w-full overflow-hidden py-1 relative">
       {/* Fade edges */}
       <div
         className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 z-10 pointer-events-none"
         style={{
-          background: isDark
-            ? 'linear-gradient(to right, #040d1a, transparent)'
-            : 'linear-gradient(to right, #f8faff, transparent)',
+          background: 'linear-gradient(to right, #0f0f0f, transparent)',
         }}
       />
       <div
         className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 z-10 pointer-events-none"
         style={{
-          background: isDark
-            ? 'linear-gradient(to left, #040d1a, transparent)'
-            : 'linear-gradient(to left, #f8faff, transparent)',
+          background: 'linear-gradient(to left, #0f0f0f, transparent)',
         }}
       />
 
       {/* Track */}
       <div
-        className="flex gap-3 sm:gap-4"
+        className="flex gap-4 sm:gap-6 items-center"
         style={{
           width: 'max-content',
-          animation: 'tech-marquee 32s linear infinite',
+          animation: 'tech-marquee 45s linear infinite',
           willChange: 'transform',
         }}
       >
         {ITEMS.map((tech, i) => (
           <div
             key={i}
-            className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-xl border text-xs sm:text-sm font-semibold flex-shrink-0 transition-all duration-200 hover:scale-105 cursor-default ${
-              isDark
-                ? 'bg-slate-900/80 border-slate-800 text-slate-400 hover:border-slate-600 hover:text-slate-200'
-                : 'bg-white border-slate-200 text-slate-600 shadow-sm hover:border-slate-300 hover:text-slate-800'
-            }`}
+            className="flex items-center gap-2 text-xs sm:text-sm font-serif text-neutral-400 hover:text-white transition-colors cursor-default whitespace-nowrap"
           >
-            <span className="text-sm sm:text-base">{tech.icon}</span>
-            <span style={{ fontFamily: 'var(--font-mono)' }}>{tech.name}</span>
+            <span className="text-[#c9a96e] text-xs">◆</span>
+            <span>{tech.name}</span>
           </div>
         ))}
       </div>

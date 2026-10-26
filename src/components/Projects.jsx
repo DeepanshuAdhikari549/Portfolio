@@ -1,149 +1,133 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTheme } from '../context/ThemeContext';
 
 const projects = [
   {
-    tags: ['React', 'MERN', 'Responsive'],
-    emoji: '🛒',
-    title: 'FitBae Clothing',
-    desc: 'A fashion-forward clothing e-commerce platform featuring a complete user experience for browsing and purchasing apparel.',
-    tech: ['React', 'Node.js', 'Express', 'MongoDB'],
-    live: 'https://fitbae-frontend-five.vercel.app',
-    code: 'https://github.com/DeepanshuAdhikari549/E-commerce-website',
-    featured: true,
+    title: 'Customer360 – Data Engineering Pipeline',
+    category: 'Data Engineering',
+    tags: ['Data Engineering', 'Python', 'SQL', 'ClickHouse', 'PostgreSQL', 'Docker'],
+    badge: 'Project #1 • Data Engineering',
+    desc: 'Production-grade Customer Data Platform (CDP) ETL pipeline ingesting, cleansing, and harmonizing customer, order, payment, and consent data from raw CSV and JSONL files.',
+    bulletPoints: [
+      'Built a data ingestion pipeline to load customer, order, payment, identity, support ticket, campaign, and consent data from CSV and JSONL files.',
+      'Implemented SQL transformations to create cleaned datasets and performed rigorous data quality checks for missing values, duplicate records, and data relationships.',
+      'Configured PostgreSQL and ClickHouse using Docker Compose to support the local data engineering and analytical storage environment.',
+    ],
+    tech: ['Python', 'SQL', 'PostgreSQL', 'ClickHouse', 'Docker', 'Docker Compose'],
+    code: 'https://github.com/DeepanshuAdhikari549/Customer360_Data-Engineering-',
   },
   {
-    tags: ['C', 'Console', 'Finance'],
-    emoji: '🏦',
-    title: 'SwiftBank',
-    desc: 'Robust console-based banking application designed for secure account management, transactions, and administrative oversight.',
-    tech: ['C', 'Data Structures', 'File Handling'],
-    live: '#',
-    code: 'https://github.com/DeepanshuAdhikari549/SwiftBank',
-    featured: true,
+    title: 'MotionVille – Video-Sharing Platform',
+    category: 'Java & Spring',
+    tags: ['Java & Spring', 'Java', 'Spring Boot', 'Spring Data JPA', 'PostgreSQL', 'REST APIs'],
+    badge: 'Project #2 • Java Backend',
+    desc: 'Enterprise video-sharing backend architecture engineered to manage high-volume channel relationships, subscriptions, and user metadata.',
+    bulletPoints: [
+      'Developed backend REST APIs for user management, channel management, and subscriptions in a video-sharing platform.',
+      'Used Spring Boot, Spring Data JPA, and PostgreSQL to manage application data and entity relationships.',
+      'Implemented subscription and unsubscription operations, subscriber retrieval, and subscription-status checks.',
+      'Applied database constraints to maintain data integrity and prevent duplicate subscriptions.',
+    ],
+    tech: ['Java', 'Spring Boot', 'Spring Data JPA', 'PostgreSQL', 'React.js', 'REST APIs'],
+    code: 'https://github.com/DeepanshuAdhikari549/MotionVille',
   },
   {
-    tags: ['React', 'Healthcare', 'MERN'],
-    emoji: '🏥',
-    title: 'Mediora',
-    desc: 'A modern healthcare platform that allows users to search, compare, and book hospitals and laboratory tests seamlessly.',
-    tech: ['React', 'Node.js', 'Express', 'MongoDB'],
-    live: 'https://medi-compare-omega.vercel.app',
-    code: 'https://github.com/DeepanshuAdhikari549/Mediora',
-    featured: true,
+    title: 'Enterprise Blog Application & Management System',
+    category: 'Java & Spring',
+    tags: ['Java & Spring', 'Java', 'Spring Boot', 'Spring Security', 'PostgreSQL'],
+    badge: 'Backend Architecture',
+    desc: 'Enterprise publishing engine built with Java, Spring Boot, PostgreSQL, and Spring Security featuring role-based authorization and full-text search.',
+    bulletPoints: [
+      'Built a comprehensive blog application using Spring Boot, PostgreSQL, and Spring Security.',
+      'Implemented full CRUD operations for posts, comments, and tags with pagination, search, filtering, and sorting.',
+      'Configured secure authentication, authorization, and endpoint protection.',
+    ],
+    tech: ['Java', 'Spring Boot', 'Spring Security', 'PostgreSQL', 'REST APIs'],
+    code: 'https://github.com/DeepanshuAdhikari549/blog-admin-dashboard',
   },
   {
-    tags: ['React', 'SaaS', 'Tailwind CSS'],
-    emoji: '⚡',
-    title: 'QuickSaaS Base',
-    desc: 'A professional and human-centric SaaS template with a premium light-themed user interface and smooth modern interactions.',
-    tech: ['React', 'Vite', 'Tailwind CSS'],
-    live: 'https://quick-saa-s-app.vercel.app',
-    code: 'https://github.com/DeepanshuAdhikari549/Quick-SaaS-App',
-    featured: true,
-  },
-  {
-    tags: ['HTML', 'CSS'],
-    emoji: '📺',
-    title: 'Netflix Clone',
-    desc: 'A high-fidelity landing page clone of Netflix, focusing on design accuracy and fully responsive layout across all devices.',
-    tech: ['HTML', 'CSS', 'Responsive Design'],
-    live: 'https://netflix-clone-tau-orcin.vercel.app',
-    code: 'https://github.com/DeepanshuAdhikari549/Netflix-Clone',
-  },
-  {
-    tags: ['JS', 'Frontend', 'Design'],
-    emoji: '🍕',
-    title: 'Food Delivery Webpage',
-    desc: 'Sleek landing page for a food delivery service, featuring modern design elements and smooth interactive navigation.',
-    tech: ['HTML', 'CSS', 'JavaScript'],
-    live: 'https://deepanshuadhikari549.github.io/Food-Delivery-Webpage/',
-    code: 'https://github.com/DeepanshuAdhikari549/Food-Delivery-Webpage',
-  },
-  {
-    tags: ['React', 'QR'],
-    emoji: '📸',
-    title: 'Portfolio QR Card',
-    desc: 'A digital contact card featuring a QR generator, geolocation map, and a clean glassmorphic premium UI.',
-    tech: ['React', 'JavaScript', 'Google Maps API'],
-    live: 'https://portfolio-qr-code.vercel.app',
-    code: 'https://github.com/DeepanshuAdhikari549/Portfolio-QR-Code',
-  },
-  {
-    tags: ['JS', 'Game', 'DOM'],
-    emoji: '🎮',
-    title: 'Guess the Number',
-    desc: 'An interactive and fun number-guessing game that provides a dynamic user experience through expert DOM manipulation.',
-    tech: ['JavaScript', 'HTML', 'CSS'],
-    live: '#',
-    code: 'https://github.com/DeepanshuAdhikari549/Guess-the-number',
-  },
-  {
-    tags: ['JS', 'Logic', 'Switcher'],
-    emoji: '🎨',
-    title: 'BG Switcher JS',
-    desc: 'Simple tool for dynamically changing webpage background colors based on user input or events.',
-    tech: ['JavaScript', 'HTML', 'CSS'],
-    live: 'https://deepanshuadhikari549.github.io/Background-color-switcher/',
-    code: 'https://github.com/DeepanshuAdhikari549/Background-color-switcher',
-  },
-  {
-    tags: ['Python', 'ML', 'AI'],
-    emoji: '🩺',
     title: 'Medical Cost Predictor',
-    desc: 'Machine learning application that predicts medical insurance costs based on health data using Scikit-learn.',
-    tech: ['Python', 'Streamlit', 'Scikit-learn', 'Pandas'],
-    live: 'https://medical-cost-predictor-app.onrender.com',
+    category: 'Python & ML',
+    tags: ['Python & ML', 'Python', 'Machine Learning', 'Pandas', 'Scikit-learn'],
+    badge: 'Machine Learning',
+    desc: 'Supervised predictive model analyzing demographic and clinical attributes to forecast healthcare insurance costs.',
+    bulletPoints: [
+      'Trained regression models on multi-feature medical datasets with extensive exploratory data analysis.',
+      'Executed data preprocessing, feature normalization, and correlation matrix analysis using Pandas and NumPy.',
+      'Deployed inference engine for automated cost prediction based on risk factors.',
+    ],
+    tech: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Streamlit'],
     code: 'https://github.com/DeepanshuAdhikari549/Medical-Cost-Predictor',
+  },
+  {
+    title: 'FitBae Clothing – E-Commerce Platform',
+    category: 'Web Applications',
+    tags: ['Web Applications', 'React.js', 'REST APIs', 'E-Commerce'],
+    badge: 'Web Application',
+    desc: 'Apparel e-commerce platform featuring catalog browsing, cart operations, dynamic filtering, and responsive interface workflows.',
+    bulletPoints: [
+      'Modular React component hierarchy with responsive layout across all device viewports.',
+      'Integrated product catalog filtering, cart state synchronization, and checkout interactions.',
+    ],
+    tech: ['React.js', 'REST APIs', 'JavaScript', 'CSS3'],
+    code: 'https://github.com/DeepanshuAdhikari549/E-commerce-website',
+  },
+  {
+    title: 'QuickSaaS – Modern SaaS Application',
+    category: 'Web Applications',
+    tags: ['Web Applications', 'React.js', 'Tailwind CSS', 'Vite'],
+    badge: 'Web Application',
+    desc: 'Modern software-as-a-service application interface featuring structured layouts, component modularity, and clean dashboard interactions.',
+    bulletPoints: [
+      'Engineered responsive user interface layouts with clean state handling and utility-driven styling.',
+      'Structured modular dashboard components and user management screens.',
+    ],
+    tech: ['React.js', 'Tailwind CSS', 'Vite', 'JavaScript'],
+    code: 'https://github.com/DeepanshuAdhikari549/Quick-SaaS-App',
   },
 ];
 
-const FILTERS = ['All', 'React', 'MERN', 'AI', 'Python', 'JS', 'C'];
+const FILTERS = ['All', 'Data Engineering', 'Java & Spring', 'Python & ML', 'Web Applications'];
 
 export default function Projects() {
-  const { isDark, theme } = useTheme();
   const [filter, setFilter] = useState('All');
 
   const visible =
     filter === 'All'
       ? projects
-      : projects.filter((p) => p.tags.includes(filter));
+      : projects.filter((p) => p.tags.includes(filter) || p.category === filter);
 
   return (
     <section id="projects" className="section-container">
       <motion.div
-        className="text-center mb-10 sm:mb-16"
+        className="text-center mb-10 sm:mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
       >
-        <span className="section-label" style={{ color: theme.primary }}>
-          — My technical journey —
+        <span className="section-label">
+          Featured Engineering Work
         </span>
-        <h2 className="section-title text-gradient">Best Work &amp; Projects</h2>
+        <h2 className="section-title">Projects</h2>
         <div className="section-divider" />
-        <p className={`text-base sm:text-lg max-w-xl mx-auto ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-          Explore my latest projects, ranging from full-stack applications to AI-powered predictive tools.
+        <p className="text-base max-w-xl mx-auto text-neutral-400 font-serif">
+          Production-tested Customer Data Platform pipelines, enterprise Java backend architectures, and machine learning models.
         </p>
       </motion.div>
 
-      {/* Filters — horizontally scrollable on mobile */}
-      <div className="mb-8 sm:mb-12">
+      {/* Filters */}
+      <div className="mb-8">
         <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1 justify-start sm:justify-center">
           {FILTERS.map((f) => (
             <button
               key={f}
               onClick={() => setFilter(f)}
-              className={`px-4 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-full border transition-all duration-300 flex-shrink-0 ${
+              className={`px-4 py-1.5 text-xs sm:text-sm font-serif rounded transition-colors border ${
                 filter === f
-                  ? 'text-white border-transparent'
-                  : isDark
-                    ? 'border-slate-700 text-slate-400 hover:border-slate-500 hover:text-slate-200 bg-slate-900/50'
-                    : 'border-slate-200 text-slate-500 hover:border-slate-400 hover:text-slate-700 bg-white shadow-sm'
+                  ? 'bg-[#f5f5f5] text-[#0c0c0c] border-[#f5f5f5] font-semibold'
+                  : 'bg-[#141414] text-neutral-400 border-[#262626] hover:text-white hover:border-[#444444]'
               }`}
-              style={filter === f ? { background: 'var(--color-gradient)' } : {}}
             >
               {f}
             </button>
@@ -151,127 +135,73 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Cards grid */}
-      <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8"
-        layout
-      >
+      {/* Grid of exactly 6 projects */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6">
         <AnimatePresence mode="popLayout">
-          {visible.map((p, i) => (
+          {visible.map((proj) => (
             <motion.div
-              key={p.title}
-              className="glass-card flex flex-col overflow-hidden group"
+              key={proj.title}
               layout
-              initial={{ opacity: 0, scale: 0.92 }}
+              initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.92 }}
-              transition={{ duration: 0.35, delay: i * 0.04 }}
+              exit={{ opacity: 0, scale: 0.98 }}
+              transition={{ duration: 0.25 }}
+              className="glass-card p-6 sm:p-7 flex flex-col justify-between"
             >
-              {/* Card header */}
-              <div
-                className="relative px-5 sm:px-7 pt-5 sm:pt-7 pb-10 sm:pb-12 overflow-hidden"
-                style={{
-                  background: isDark
-                    ? `linear-gradient(135deg, ${theme.primary}12, transparent)`
-                    : `linear-gradient(135deg, ${theme.primary}08, transparent)`,
-                }}
-              >
-                {p.featured && (
-                  <span
-                    className="absolute top-4 right-4 text-[9px] sm:text-[10px] font-black tracking-tight uppercase px-2.5 py-1 rounded-full z-10"
-                    style={{
-                      background: `${theme.primary}20`,
-                      color: theme.primary,
-                      border: `1px solid ${theme.primary}35`,
-                    }}
-                  >
-                    ★ Featured
+              <div>
+                {/* Header Badge & Title */}
+                <div className="mb-3">
+                  <span className="text-[11px] font-serif uppercase tracking-wider text-[#c9a96e]">
+                    {proj.badge}
                   </span>
-                )}
-                <p className="text-3xl sm:text-4xl mb-3 sm:mb-4 transform group-hover:scale-110 transition-transform duration-300 w-max">
-                  {p.emoji}
+                  <h3 className="text-xl font-bold font-serif text-white mt-1">
+                    {proj.title}
+                  </h3>
+                </div>
+
+                {/* Description */}
+                <p className="text-sm text-neutral-300 font-serif leading-relaxed mb-4">
+                  {proj.desc}
                 </p>
-                <h3 className={`text-base sm:text-xl font-bold mb-2 sm:mb-3 ${isDark ? 'text-white' : 'text-slate-900'}`}>
-                  {p.title}
-                </h3>
-                <p className={`text-xs sm:text-sm leading-relaxed truncate-3 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-                  {p.desc}
-                </p>
+
+                {/* Bullets */}
+                <div className="space-y-2 mb-5 p-3.5 rounded bg-[#101010] border border-[#222222]">
+                  {proj.bulletPoints.map((bp, bpIdx) => (
+                    <div key={bpIdx} className="flex items-start gap-2 text-xs text-neutral-400 font-serif leading-relaxed">
+                      <span className="text-[#c9a96e] select-none">▸</span>
+                      <span>{bp}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              {/* Card footer */}
-              <div
-                className="px-5 sm:px-7 pb-4 sm:pb-6 pt-4 sm:pt-5 flex flex-wrap items-center justify-between gap-3 mt-auto"
-                style={{
-                  borderTop: `1px solid ${isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)'}`,
-                }}
-              >
-                <div className="flex flex-wrap gap-1.5">
-                  {p.tech.slice(0, 3).map((t) => (
+              {/* Technologies & GitHub Link Only (No Live Demo) */}
+              <div className="pt-3 border-t border-[#222222]">
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {proj.tech.map((t) => (
                     <span
                       key={t}
-                      className={`text-[9px] sm:text-[10px] px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md font-bold uppercase ${
-                        isDark ? 'bg-slate-800 text-slate-400' : 'bg-slate-100 text-slate-500'
-                      }`}
-                      style={{ fontFamily: 'var(--font-mono)' }}
+                      className="text-xs font-serif px-2.5 py-0.5 rounded bg-[#181818] text-neutral-300 border border-[#262626]"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-2">
-                  {p.live !== '#' && (
-                    <a
-                      href={p.live}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl border flex items-center justify-center text-xs sm:text-sm transition-all hover:scale-110 active:scale-95"
-                      style={{ borderColor: theme.primary, color: theme.primary }}
-                      title="Live Preview"
-                      aria-label={`View ${p.title} live`}
-                    >
-                      <i className="fas fa-external-link-alt" />
-                    </a>
-                  )}
-                  <a
-                    href={p.code}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl border flex items-center justify-center text-xs sm:text-sm transition-all hover:scale-110 active:scale-95 ${
-                      isDark
-                        ? 'border-slate-700 text-slate-400 hover:border-slate-500 hover:text-white bg-slate-900/40'
-                        : 'border-slate-200 text-slate-400 hover:border-slate-400 hover:text-slate-900 bg-white'
-                    }`}
-                    title="Source Code"
-                    aria-label={`View ${p.title} source code`}
-                  >
-                    <i className="fab fa-github" />
-                  </a>
-                </div>
+
+                <a
+                  href={proj.code}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2 px-4 rounded text-xs font-serif font-semibold bg-[#1a1a1a] border border-[#333333] text-neutral-200 hover:text-white hover:bg-[#252525] hover:border-[#555555] transition-colors"
+                >
+                  <i className="fa-brands fa-github text-sm" />
+                  <span>View Repository on GitHub ↗</span>
+                </a>
               </div>
             </motion.div>
           ))}
         </AnimatePresence>
-      </motion.div>
-
-      {/* GitHub CTA */}
-      <motion.div
-        className="text-center mt-10 sm:mt-16"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3 }}
-      >
-        <a
-          href="https://github.com/DeepanshuAdhikari549?tab=repositories"
-          target="_blank"
-          rel="noreferrer"
-          className="btn-secondary inline-flex gap-2.5 px-6 sm:px-8"
-        >
-          <i className="fab fa-github" />
-          See More on GitHub
-        </a>
-      </motion.div>
+      </div>
     </section>
   );
 }
